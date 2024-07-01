@@ -1,3 +1,0 @@
-D:/Git/Campus_Navigation/cmake-build-debug/CMakeFiles/Campus_Navigation.dir
-D:/Git/Campus_Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Git/Campus_Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
