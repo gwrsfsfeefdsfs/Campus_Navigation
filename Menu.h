@@ -5,7 +5,7 @@
 #ifndef MENU_H
 #define MENU_H
 class Menu {
-
+    MOUSEMSG m{};
 public:  Menu() {
         initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);	// 创建绘图窗口，大小为 640x480 像素
         setbkcolor(WHITE);
@@ -16,6 +16,19 @@ public:  Menu() {
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
         drawAlpha(&img2,0,0);
+    while (1) {
+        m = GetMouseMsg();
+        if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
+            if (m.uMsg == WM_LBUTTONDOWN) {
+
+                IMAGE img;
+                loadimage(&img, "../temp233.png",10,10);
+                drawAlpha(&img,m.x,m.y);
+
+            }
+        }
+
+    }
         _getch();
         closegraph();
 
