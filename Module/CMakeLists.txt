@@ -1,0 +1,3 @@
+add_library(module_StorageStructure STATIC StorageStructure.cpp module_StorageStructure.h)
+
+target_include_directories(module_StorageStructure PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
