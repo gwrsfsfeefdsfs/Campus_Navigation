@@ -12,11 +12,12 @@ public:  Menu() {
         cleardevice();
         IMAGE img1;
         IMAGE img2;
+        loadimage(&img1, "../UI.png",800,800);
         loadimage(&img2, "../guetMap.png",600,600);
-        drawAlpha(&img2,0,0);     // 载入PNG图并去透明部分
-        _getch();				// 按任意键继续
+        drawAlpha(&img1,0,0);
+        drawAlpha(&img2,0,0);
+        _getch();
         closegraph();
-
 
 }
     static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y)
