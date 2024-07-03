@@ -4,10 +4,5 @@
 #include "Menu.h"
 using namespace std;
 int main(){
-
-    Menu a;		// 关闭绘图窗口
-   //2233
-   cout<<"233 ";
-
-
+    Menu a;
 }

@@ -4,14 +4,23 @@
 
 #ifndef MENU_H
 #define MENU_H
+#define NUM 500
+#define M 10
+class Node {
+
+  public:  short x, y;
+
+};
 class Menu {
     MOUSEMSG m{};
 public:  Menu() {
-        initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);	// 创建绘图窗口，大小为 640x480 像素
+        initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
         IMAGE img1;
         IMAGE img2;
+        int nodeNum=0;
+        Node po[M];
         loadimage(&img1, "../UI.png",800,800);
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
@@ -20,17 +29,60 @@ public:  Menu() {
         m = GetMouseMsg();
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
-
                 IMAGE img;
                 loadimage(&img, "../temp233.png",10,10);
-                drawAlpha(&img,m.x,m.y);
+                drawAlpha(&img,m.x-3,m.y-3);
+                nodeNum+=1;
+                po[nodeNum].x=m.x;
+                po[nodeNum].y=m.y;
+                if (nodeNum==2) {
+                    LINE(po[1],po[2],50);
 
+                }
             }
         }
 
     }
-        _getch();
-        closegraph();
+
+
+}
+    static void drawWay(Node a,Node b)
+    {
+
+
+
+
+
+
+
+
+}
+    void LINE(Node a,Node b,int SLEEP)
+{
+
+    short x1=a.x;
+    short y1=a.y;
+    short x2;
+    short y2;
+    IMAGE img;
+    loadimage(&img, "../temp233.png",10,10);
+    for(int i=0;i<=20;i++)
+    {
+        LINESTYLE Style;
+        getlinestyle(&Style);
+        Style.thickness=3;
+        setlinestyle(&Style);
+        setlinecolor(RGB(71, 143, 221));
+        x2=a.x+(b.x-a.x)*i/20;
+        y2=a.y+(b.y-a.y)*i/20;
+        line(a.x,a.y,x2,y2);
+        x1=x2;
+        y1=y2;
+        drawAlpha(&img,a.x-3,a.y-3);
+        drawAlpha(&img,b.x-3,b.y-3);
+        Sleep(SLEEP);
+    }
+
 
 }
     static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y)
