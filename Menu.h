@@ -9,6 +9,11 @@
 class Node {
 
   public:  short x, y;
+    Node() {
+
+        x=0;
+        y=0;
+    }
 
 };
 class Menu {
@@ -29,14 +34,23 @@ public:  Menu() {
         m = GetMouseMsg();
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
+                if (nodeNum==10) {
+                    drawAlpha(&img2,0,0);
+                 for (int i=0;i<=9;i++) {
+                     po[i].x=0;
+                     po[i].y=0;
+
+                 }
+                    nodeNum=0;
+                }
                 IMAGE img;
                 loadimage(&img, "../temp233.png",10,10);
                 drawAlpha(&img,m.x-3,m.y-3);
                 nodeNum+=1;
                 po[nodeNum].x=m.x;
                 po[nodeNum].y=m.y;
-                if (nodeNum==2) {
-                    LINE(po[1],po[2],50);
+                if (nodeNum>=2) {
+                    LINE(po[nodeNum-1],po[nodeNum],10);
 
                 }
             }
@@ -82,8 +96,6 @@ public:  Menu() {
         drawAlpha(&img,b.x-3,b.y-3);
         Sleep(SLEEP);
     }
-
-
 }
     static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y)
 {
