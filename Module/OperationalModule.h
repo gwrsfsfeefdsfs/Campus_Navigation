@@ -1,13 +1,20 @@
 //
 // Created by Monster on 24-7-2.
 //
+#ifndef OPERATIONAL_MODULE_H
+#define OPERATIONAL_MODULE_H
 
-#ifndef MAIN_CPP_STORAGE_H
-#define MAIN_CPP_STORAGE_H
+#include "StorageModule.h"
 
+class OperationalModule {
+private:
+    StorageModule& storage;
 
-class Storage {
+public:
+    // 构造函数
+    OperationalModule(StorageModule& storage);
+
+    // 其他操作函数，如插入节点、插入道路、删除节点、删除道路、修改节点名称等的接口
 };
 
-
-#endif//MAIN_CPP_STORAGE_H
+#endif // OPERATIONAL_MODULE_H

@@ -1,4 +1,4 @@
-# Install script for directory: D:/git hub/Campus_Navigation
+# Install script for directory: C:/Users/Monster/Desktop/数据结构结课设计/Campus-Navigation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/CLion 2024.1.4/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Jet Brains/CLion/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/git hub/Campus_Navigation/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Monster/Desktop/数据结构结课设计/Campus-Navigation/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

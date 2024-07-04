@@ -1,19 +1,7 @@
 # ninja log v6
-8	1656	7416061675660867	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1657	1836	7416061692160803	Campus_Navigation.exe	6be094a00f4d438b
-3	314	7416009560565540	build.ninja	d7ebf010452f64ab
-9	1664	7416061778897870	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1665	1839	7416061795460539	Campus_Navigation.exe	6be094a00f4d438b
-8	1712	7416062240563235	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1713	1890	7416062257610505	Campus_Navigation.exe	6be094a00f4d438b
-7	1628	7416062519298365	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1629	1806	7416062535517678	Campus_Navigation.exe	6be094a00f4d438b
-8	1741	7416063280599274	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1742	1917	7416063297932883	Campus_Navigation.exe	6be094a00f4d438b
-7	1677	7416063454518782	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
-1678	1853	7416063471213710	Campus_Navigation.exe	6be094a00f4d438b
 8	1751	7416063955338427	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
 1752	1929	7416063972779514	Campus_Navigation.exe	6be094a00f4d438b
+<<<<<<< Updated upstream
 7	3653	7416866077665232	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
 3654	4071	7416866114132924	Campus_Navigation.exe	6be094a00f4d438b
 22	1712	7416867937275408	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
@@ -98,3 +86,6 @@
 1705	1877	7416909404530588	Campus_Navigation.exe	6be094a00f4d438b
 14	1641	7416909814594728	CMakeFiles/Campus_Navigation.dir/main.cpp.obj	9a947bc5822c0aa4
 1642	1819	7416909830879743	Campus_Navigation.exe	6be094a00f4d438b
+=======
+3	314	7417911101594809	build.ninja	d7ebf010452f64ab
+>>>>>>> Stashed changes
