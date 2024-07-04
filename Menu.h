@@ -1,9 +1,9 @@
 //
 // Created by Admin on 24-7-2.
 //
-
 #ifndef MENU_H
 #define MENU_H
+
 class Menu {
     MOUSEMSG m{};
 public:  Menu() {
