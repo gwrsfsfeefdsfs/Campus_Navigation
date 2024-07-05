@@ -7,9 +7,9 @@
 
 // 节点结构体，包含节点名称、坐标和类型
 struct Node {
-    std::string name;   // 节点名称
-    short x, y;         // 节点坐标
-    std::string type;   // 节点类型
+    std::string name;
+    short x, y; // 节点坐标
+    int type; // 节点类型: 0-临时节点, 1-路口节点, 2-弯心节点, 3-建筑节点
 };
 
 class StorageModule {
@@ -24,7 +24,7 @@ public:
     StorageModule();
 
     // 插入节点
-    void insertNode(const std::string& name, double x, double y, const std::string& type);
+    void insertNode(const std::string& name, short x, short y, int type);
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
     // 删除节点
@@ -35,9 +35,9 @@ public:
     void modifyNodeName(const std::string& oldName, const std::string& newName);
 
     // 获取节点列表
-    const std::unordered_map<std::string, Node>& getNodes() const;
+    const std::unordered_map<std::string, Node>& getNodes();
     // 获取邻接矩阵
-    const std::unordered_map<std::string, std::unordered_map<std::string, double>>& getAdjMatrix() const;
+    const std::unordered_map<std::string, std::unordered_map<std::string, double>>& getAdjMatrix();
 
     // 生成测试数据
     void generateTestData();

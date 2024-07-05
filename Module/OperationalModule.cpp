@@ -4,7 +4,7 @@
 OperationalModule::OperationalModule(StorageModule& storage) : storage(storage) {}
 
 // 添加节点
-void OperationalModule::addNode(const std::string& name, double x, double y, const std::string& type) {
+void OperationalModule::addNode(const std::string& name, short x, short y, int type) {
     storage.insertNode(name, x, y, type);
 }
 

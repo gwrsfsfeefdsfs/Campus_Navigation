@@ -25,3 +25,11 @@
 664	766	7418669796916103	Module/libStorageModule.a	5036602587f21583
 19	1462	7418669790464043	CMakeFiles/CampusNavigation.dir/main.cpp.obj	3126085b89463a0c
 1462	1699	7418669804886142	CampusNavigation.exe	22997fd8b084cfd1
+8	559	7418683437397825	Module/CMakeFiles/NavigationModule.dir/NavigationModule.cpp.obj	bcc0143013fc7825
+15	665	7418683437473087	Module/CMakeFiles/StorageModule.dir/StorageModule.cpp.obj	b3f680583a5ee584
+18	1476	7418683437502986	CMakeFiles/CampusNavigation.dir/main.cpp.obj	3126085b89463a0c
+10	113	7418684096396910	Module/libNavigationModule.a	a8c92a185c1d4307
+15	130	7418684096488147	Module/libStorageModule.a	5036602587f21583
+7	327	7418684096396910	Module/CMakeFiles/OperationalModule.dir/OperationalModule.cpp.obj	f898a794c14a1cfa
+328	387	7418684099586171	Module/libOperationalModule.a	aceeddc67f63ac0a
+387	625	7418684100212764	CampusNavigation.exe	22997fd8b084cfd1
