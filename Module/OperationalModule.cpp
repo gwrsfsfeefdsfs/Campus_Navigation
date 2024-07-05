@@ -4,8 +4,8 @@
 OperationalModule::OperationalModule(StorageModule& storage) : storage(storage) {}
 
 // 添加节点
-void OperationalModule::addNode(const std::string& name, double x, double y) {
-    storage.insertNode(name, x, y);
+void OperationalModule::addNode(const std::string& name, short x, short y, int type) {
+    storage.insertNode(name, x, y, type);
 }
 
 // 添加道路
