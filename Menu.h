@@ -4,7 +4,7 @@
 #ifndef MENU_H
 #define MENU_H
 #define NUM 500
-#define M 10
+#define M 11
 #include "Module/NavigationModule.h"
 #include "Module/OperationalModule.h"
 #include "Module/StorageModule.h"
@@ -29,11 +29,12 @@ public:  Menu(StorageModule storage) {
         std::unordered_map <std::string, Node>map=storage.getNodes();
     Node temp;
     for(auto kv: map){
-
         IMAGE img;
         loadimage(&img, "../temp233.png",10,10);
         drawAlpha(&img,kv.second.x-3,kv.second.y-3);
     }
+   std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storage.getAdjMatrix();
+
     while (1) {
         m = GetMouseMsg();
 
