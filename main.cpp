@@ -19,19 +19,17 @@ int main(){
     NavigationModule navigation(storage);
 
     // 插入测试数据
-    storage.generateTestData();
+    // storage.generateTestData();
 
     // 测试导航功能
-    std::string start = "A";
-    std::string end = "D";
-    double distance = navigation.findShortestPath(start, end);
+     std::string start = "A1";
+     std::string end = "A2";
+     double distance = navigation.findShortestPath(start, end);
 
     // 输出最短路径距离
-    std::cout << "从 " << start << " 到 " << end << " 的最短路径距离是: " << distance << std::endl;
 
 
     // 在这里可以编写主程序的逻辑
-    Menu a;
+    Menu a(storage);
 
-    return 0;
 }

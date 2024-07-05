@@ -67,11 +67,19 @@ const std::unordered_map<std::string, std::unordered_map<std::string, double>>& 
 }
 // 初始化数据
 void StorageModule::generateTestData() {
-    insertNode("A1", 446, 553);
-    insertNode("A2", 446, 460);
-    insertNode("A3", 446, 402);
-    insertNode("A4", 446, 296);
-    insertRoad("A1", "A2");
-    insertRoad("A2", "A3");
-    insertRoad("A3", "A4");
+    insertNode("彩虹大道起点", 153, 562);
+    insertNode("彩虹大道与研学路交点1", 136, 538);
+    insertNode("彩虹大道与研学路交点2", 121, 502);
+    insertNode("彩虹大道与善学路交点", 128, 481);
+    insertNode("彩虹大道与劝学路交点", 210, 431);
+    insertNode("彩虹大道与厚学路交点", 248, 390);
+    insertNode("彩虹大道与力港大道交点", 278, 323);
+    insertNode("彩虹大道与博学路交点", 287, 243);
+    insertNode("彩虹大道与笃行路交点", 350, 182);
+    insertNode("彩虹大道与乐学路和厚学路交点", 438, 154);
+    insertNode("彩虹大道拐点", 490, 134);
+    insertNode("彩虹大道与燕圆路交点", 513, 111);
+    insertNode("彩虹大道终点", 531, 77);
+
+
 }

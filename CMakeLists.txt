@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(./EasyX/include)
 link_directories(./EasyX/lib64)
 link_libraries(libeasyx.a)
-
-add_executable(Campus_Navigation main.cpp Menu.h)
 # 添加可执行文件并链接模块
 add_executable(CampusNavigation main.cpp)
 # 添加子目录，包含各个模块的 CMakeLists.txt

@@ -5,37 +5,38 @@
 #define MENU_H
 #define NUM 500
 #define M 10
+#include "Module/NavigationModule.h"
+#include "Module/OperationalModule.h"
+#include "Module/StorageModule.h"
 
-class Node1 {
-  public:  short x, y;
-    Node1() {
+#include <map>
 
-        x=0;
-        y=0;
-    }
-
-};
 
 class Menu {
     MOUSEMSG m{};
-public:  Menu() {
+public:  Menu(StorageModule storage) {
         initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
         IMAGE img1;
         IMAGE img2;
         int nodeNum=0;
-        Node1 po[M];
+        Node po[M];
         loadimage(&img1, "../UI.png",800,800);
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
-        drawAlpha(&img2,0,0);
+        drawAlpha(&img2, 0, 0);
+        std::unordered_map <std::string, Node>map=storage.getNodes();
+    Node temp;
+    for(auto kv: map){
+
+        IMAGE img;
+        loadimage(&img, "../temp233.png",10,10);
+        drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+    }
     while (1) {
         m = GetMouseMsg();
-        if (m.x >= 632 && m.x <=774  && m.y >= 136 && m.y <= 170) { if (m.uMsg == WM_LBUTTONDOWN)std::cout << 1<<"\n"; }
-        if (m.x >= 632 && m.x <= 774 && m.y >= 202 && m.y <= 237){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 2<<"\n";}
-        if (m.x >= 632 && m.x <= 774 && m.y >= 279 && m.y <= 311){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 3<<"\n";}
-        if (m.x >= 632 && m.x <= 774 && m.y >= 345 && m.y <= 376){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 4<<"\n";}
+
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
                 if (nodeNum==10) {
@@ -60,12 +61,16 @@ public:  Menu() {
             }
         }
         if (m.uMsg == WM_LBUTTONDOWN)std::cout<<m.x<<" "<<m.y<<"\n";
+        if (m.x >= 632 && m.x <=774  && m.y >= 136 && m.y <= 170) { if (m.uMsg == WM_LBUTTONDOWN)std::cout << 1<<"\n"; }
+        if (m.x >= 632 && m.x <= 774 && m.y >= 202 && m.y <= 237){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 2<<"\n";}
+        if (m.x >= 632 && m.x <= 774 && m.y >= 279 && m.y <= 311){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 3<<"\n";}
+        if (m.x >= 632 && m.x <= 774 && m.y >= 345 && m.y <= 376){if (m.uMsg == WM_LBUTTONDOWN)std::cout << 4<<"\n";}
 
     }
 
 
 }
-    static void drawWay(Node1 a,Node1 b)
+    static void drawWay(Node a,Node b)
     {
 
 
@@ -76,7 +81,7 @@ public:  Menu() {
 
 
 }
-    void LINE(Node1 a,Node1 b,int SLEEP)
+    void LINE(Node a,Node b,int SLEEP)
 {
 
     short x1=a.x;
