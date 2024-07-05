@@ -1,3 +1,0 @@
-C:/Users/Monster/Desktop/数据结构结课设计/Campus-Navigation/cmake-build-debug/CMakeFiles/Campus_Navigation.dir
-C:/Users/Monster/Desktop/数据结构结课设计/Campus-Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Monster/Desktop/数据结构结课设计/Campus-Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
