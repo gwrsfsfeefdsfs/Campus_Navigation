@@ -1,5 +1,5 @@
 #include <conio.h>
-#include <graphics.h>// 引用图形库头文件
+#include <graphics.h> // 引用图形库头文件
 #include <iostream>
 #include "Menu.h"
 #include "Module/StorageModule.h"
@@ -19,17 +19,18 @@ int main(){
     NavigationModule navigation(storage);
 
     // 插入测试数据
-    // storage.generateTestData();
+    storage.generateTestData();
 
     // 测试导航功能
-     std::string start = "A1";
-     std::string end = "A2";
-     double distance = navigation.findShortestPath(start, end);
+    std::string start = "彩虹大道起点";
+    std::string end = "彩虹大道终点";
+    double distance = navigation.findShortestPath(start, end);
 
     // 输出最短路径距离
-
+    cout << "从 " << start << " 到 " << end << " 的最短路径距离为: " << distance << endl;
 
     // 在这里可以编写主程序的逻辑
     Menu a(storage);
 
+    return 0;
 }

@@ -5,10 +5,11 @@
 #include <string>
 #include <unordered_map>
 
-// 节点结构体，包含节点名称和坐标
+// 节点结构体，包含节点名称、坐标和类型
 struct Node {
-    std::string name;
-    short x, y; // 节点坐标
+    std::string name;   // 节点名称
+    short x, y;         // 节点坐标
+    std::string type;   // 节点类型
 };
 
 class StorageModule {
@@ -23,7 +24,7 @@ public:
     StorageModule();
 
     // 插入节点
-    void insertNode(const std::string& name, double x, double y);
+    void insertNode(const std::string& name, double x, double y, const std::string& type);
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
     // 删除节点

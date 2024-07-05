@@ -12,7 +12,7 @@ public:
     OperationalModule(StorageModule& storage);
 
     // 添加节点
-    void addNode(const std::string& name, double x, double y);
+    void addNode(const std::string& name, double x, double y, const std::string& type);
     // 添加道路
     void addRoad(const std::string& from, const std::string& to);
     // 移除节点
