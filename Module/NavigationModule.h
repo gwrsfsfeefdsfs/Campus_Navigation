@@ -1,10 +1,9 @@
-//
-// Created by Monster on 24-7-4.
-//
 #ifndef NAVIGATION_MODULE_H
 #define NAVIGATION_MODULE_H
 
 #include "StorageModule.h"
+#include <string>
+#include <vector>
 
 class NavigationModule {
 private:
@@ -14,7 +13,8 @@ public:
     // 构造函数
     NavigationModule(StorageModule& storage);
 
-    // 导航函数，如求解最短路径等
+    // 查找最短路径
+    double findShortestPath(const std::string& start, const std::string& end);
 };
 
 #endif // NAVIGATION_MODULE_H

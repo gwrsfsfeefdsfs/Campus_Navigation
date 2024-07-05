@@ -1,6 +1,3 @@
-//
-// Created by Monster on 24-7-2.
-//
 #ifndef OPERATIONAL_MODULE_H
 #define OPERATIONAL_MODULE_H
 
@@ -14,7 +11,16 @@ public:
     // 构造函数
     OperationalModule(StorageModule& storage);
 
-    // 其他操作函数，如插入节点、插入道路、删除节点、删除道路、修改节点名称等的接口
+    // 添加节点
+    void addNode(const std::string& name, double x, double y);
+    // 添加道路
+    void addRoad(const std::string& from, const std::string& to);
+    // 移除节点
+    void removeNode(const std::string& name);
+    // 移除道路
+    void removeRoad(const std::string& from, const std::string& to);
+    // 修改节点名称
+    void changeNodeName(const std::string& oldName, const std::string& newName);
 };
 
 #endif // OPERATIONAL_MODULE_H

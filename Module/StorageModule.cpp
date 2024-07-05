@@ -1,53 +1,77 @@
-//
-// Created by Monster on 24-7-2.
-//
-// StorageModule.cpp
-
 #include "StorageModule.h"
+#include <cmath>
 
+// 构造函数，初始化测试数据
 StorageModule::StorageModule() {
-    // 初始化
-    generateTestData(); // 调用生成测试数据的函数
+    generateTestData();
 }
 
+// 插入节点
 void StorageModule::insertNode(const std::string& name, double x, double y) {
-    // 实现插入节点的逻辑
+    static int node_id_counter = 0;
+    nodes[name] = {name, static_cast<short>(x), static_cast<short>(y)};
 }
 
+// 插入道路，计算并存储两节点间的距离
 void StorageModule::insertRoad(const std::string& from, const std::string& to) {
-    // 实现插入道路的逻辑
+    if (nodes.find(from) != nodes.end() && nodes.find(to) != nodes.end()) {
+        double distance = sqrt(pow(nodes[from].x - nodes[to].x, 2) + pow(nodes[from].y - nodes[to].y, 2));
+        adjMatrix[from][to] = distance;
+        adjMatrix[to][from] = distance; // 无向图
+    }
 }
 
+// 删除节点及其相关的道路信息
 void StorageModule::deleteNode(const std::string& name) {
-    // 实现删除节点的逻辑
+    nodes.erase(name);
+    adjMatrix.erase(name);
+    for (auto& pair : adjMatrix) {
+        pair.second.erase(name);
+    }
 }
 
+// 删除道路信息
 void StorageModule::deleteRoad(const std::string& from, const std::string& to) {
-    // 实现删除道路的逻辑
+    adjMatrix[from].erase(to);
+    adjMatrix[to].erase(from);
 }
 
+// 修改节点名称
 void StorageModule::modifyNodeName(const std::string& oldName, const std::string& newName) {
-    // 实现修改节点名称的逻辑
+    if (nodes.find(oldName) != nodes.end()) {
+        Node node = nodes[oldName];
+        node.name = newName;
+        nodes.erase(oldName);
+        nodes[newName] = node;
+
+        adjMatrix[newName] = adjMatrix[oldName];
+        adjMatrix.erase(oldName);
+
+        for (auto& pair : adjMatrix) {
+            if (pair.second.find(oldName) != pair.second.end()) {
+                pair.second[newName] = pair.second[oldName];
+                pair.second.erase(oldName);
+            }
+        }
+    }
 }
 
-const std::vector<Node>& StorageModule::getNodes() const {
+// 获取节点列表
+const std::unordered_map<std::string, Node>& StorageModule::getNodes() const {
     return nodes;
 }
 
-const std::vector<Road>& StorageModule::getRoads() const {
-    return roads;
+// 获取邻接矩阵
+const std::unordered_map<std::string, std::unordered_map<std::string, double>>& StorageModule::getAdjMatrix() const {
+    return adjMatrix;
 }
-
+// 初始化数据
 void StorageModule::generateTestData() {
-    // 添加一些节点信息
-    insertNode("A", 0.0, 0.0);
-    insertNode("B", 1.0, 1.0);
-    insertNode("C", 2.0, 2.0);
-    insertNode("D", 3.0, 3.0);
-
-    // 添加一些道路信息（假设直线距离作为道路长度）
-    insertRoad("A", "B");
-    insertRoad("B", "C");
-    insertRoad("C", "D");
-    insertRoad("A", "C");
+    insertNode("A1", 446, 553);
+    insertNode("A2", 446, 460);
+    insertNode("A3", 446, 402);
+    insertNode("A4", 446, 296);
+    insertRoad("A1", "A2");
+    insertRoad("A2", "A3");
+    insertRoad("A3", "A4");
 }

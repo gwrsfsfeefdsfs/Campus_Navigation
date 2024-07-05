@@ -1,13 +1,12 @@
 //
 // Created by Admin on 24-7-2.
 //
-
 #ifndef MENU_H
 #define MENU_H
 #define NUM 500
 #define M 10
-class Node1 {
 
+class Node1 {
   public:  short x, y;
     Node1() {
 
@@ -16,6 +15,7 @@ class Node1 {
     }
 
 };
+
 class Menu {
     MOUSEMSG m{};
 public:  Menu() {

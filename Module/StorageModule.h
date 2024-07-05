@@ -1,30 +1,22 @@
-//
-// Created by Monster on 24-7-2.
-//
-// StorageModule.h
 #ifndef STORAGE_MODULE_H
 #define STORAGE_MODULE_H
 
 #include <vector>
 #include <string>
+#include <unordered_map>
 
-// 定义节点结构
+// 节点结构体，包含节点名称和坐标
 struct Node {
     std::string name;
-    double x, y; // 节点坐标
-};
-
-// 定义道路结构
-struct Road {
-    std::string from;
-    std::string to;
-    double length; // 道路长度
+    short x, y; // 节点坐标
 };
 
 class StorageModule {
 private:
-    std::vector<Node> nodes; // 存储节点信息
-    std::vector<Road> roads; // 存储道路信息
+    // 使用哈希表存储节点信息
+    std::unordered_map<std::string, Node> nodes;
+    // 使用邻接矩阵存储道路长度信息
+    std::unordered_map<std::string, std::unordered_map<std::string, double>> adjMatrix;
 
 public:
     // 构造函数
@@ -32,24 +24,19 @@ public:
 
     // 插入节点
     void insertNode(const std::string& name, double x, double y);
-
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
-
     // 删除节点
     void deleteNode(const std::string& name);
-
     // 删除道路
     void deleteRoad(const std::string& from, const std::string& to);
-
     // 修改节点名称
     void modifyNodeName(const std::string& oldName, const std::string& newName);
 
     // 获取节点列表
-    const std::vector<Node>& getNodes() const;
-
-    // 获取道路列表
-    const std::vector<Road>& getRoads() const;
+    const std::unordered_map<std::string, Node>& getNodes() const;
+    // 获取邻接矩阵
+    const std::unordered_map<std::string, std::unordered_map<std::string, double>>& getAdjMatrix() const;
 
     // 生成测试数据
     void generateTestData();
