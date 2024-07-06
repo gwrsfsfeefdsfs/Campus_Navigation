@@ -9,7 +9,7 @@
 struct Node {
     std::string name;   // 节点名称
     short x, y;         // 节点坐标
-    std::string type;   // 节点类型
+    int type;   // 节点类型
 };
 
 class StorageModule {
@@ -24,7 +24,7 @@ public:
     StorageModule();
 
     // 插入节点
-    void insertNode(const std::string& name, double x, double y, const std::string& type);
+    void insertNode(const std::string& name, double x, double y,int type);
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
     // 删除节点

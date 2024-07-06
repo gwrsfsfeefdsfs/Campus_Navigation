@@ -34,7 +34,16 @@ public:  Menu(StorageModule storage) {
         drawAlpha(&img,kv.second.x-3,kv.second.y-3);
     }
    std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storage.getAdjMatrix();
+    for(auto kv: map1){
 
+
+
+            auto ts=map.find(kv.first);
+        for(auto kc:  map1[kv.first]) {
+            auto te=map.find(kc.first);
+            LINE(ts->second,te->second,0);
+        }
+    }
     while (1) {
         m = GetMouseMsg();
 
