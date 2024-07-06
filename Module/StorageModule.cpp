@@ -92,8 +92,8 @@ void StorageModule::generateTestData() {
     insertRoad("彩虹大道与研学路交点2","彩虹大道与善学路交点");
     insertRoad("彩虹大道与善学路交点","彩虹大道拐点1");
     insertRoad("彩虹大道拐点1","彩虹大道与劝学路交点");
-    insertRoad("彩虹大道与劝学路交点","勤学西路与彩虹大道交点");
-    insertRoad("勤学西路与彩虹大道交点","彩虹大道与厚学路交点");
+    insertRoad("彩虹大道与劝学路交点","勤学北路与彩虹大道交点");
+    insertRoad("勤学北路与彩虹大道交点","彩虹大道与厚学路交点");
     insertRoad("彩虹大道与厚学路交点","彩虹大道拐点2（思进湖）");
     insertRoad("彩虹大道拐点2（思进湖）","彩虹大道与力港大道交点");
     insertRoad("彩虹大道与力港大道交点","彩虹大道拐点3（足球场）");
@@ -151,7 +151,7 @@ void StorageModule::generateTestData() {
     insertNode("紫荆路与求学路交点",235,204,1);
 
     insertRoad("紫荆路与力港大道交点（润苑）","劝学路与力港大道交点（仲园餐厅）");
-    insertRoad("劝学路与力港大道交点（仲园餐厅）","紫荆路拐点1");
+    insertRoad("紫荆路与力港大道交点（润苑）","紫荆路拐点1");
     insertRoad("紫荆路拐点1","紫荆路拐点2");
     insertRoad("紫荆路拐点2","紫荆路拐点3");
     insertRoad("紫荆路拐点3","紫荆路与求学路交点");
@@ -169,7 +169,7 @@ void StorageModule::generateTestData() {
 
     insertRoad("求学路与博学路交点","求学路拐点下1");
     insertRoad("求学路拐点下1","求学路拐点下2");
-    insertRoad("求学路拐点下2","求学路与力港大道交点");
+    insertRoad("求学路拐点下1","求学路与力港大道交点");
     insertRoad("求学路与博学路交点","彩虹大道与博学路交点");
     insertRoad("求学路与博学路交点","紫荆路与求学路交点");
     insertRoad("紫荆路与求学路交点","求学路拐点上1");
@@ -319,8 +319,8 @@ void StorageModule::generateTestData() {
     insertNode("恒学路拐点3（唔学广场）",305,443,3);
     insertNode("恒学路与勤学路交点（雅园餐厅）",278,453,3);
     insertNode("勤学路岔口（濛苑）",263,444,3);
-    insertNode("勤学北路",235,446,1);
-    insertNode("勤学西路",250,424,1);
+    insertNode("勤学西路",235,446,1);
+    insertNode("勤学北路",250,424,1);
     insertNode("勤学北路与彩虹大道交点",233,412,1);
     insertRoad("燕园路与正德路交点","恒学路拐点1（艺术与设计学院）");
     insertRoad("恒学路拐点1（艺术与设计学院）","恒学路拐点2（四十五教）");
