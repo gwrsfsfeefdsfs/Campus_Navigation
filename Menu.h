@@ -233,8 +233,7 @@ public:
           std::vector<std::string> a=navigation.getShortestPath();
           for (int i = 0; i<a.size(); ++i)
           {
-              std::cout << a[i+1]<<" ";
-              LINE(map.find(a[i])->second,map.find(a[i+1])->second,50);
+              if (i+1<=a.size()-1)LINE(map.find(a[i])->second,map.find(a[i+1])->second,50);
               IMAGE img;
               loadimage(&img, "../temp233.png",10,10);
               drawAlpha(&img,map.find("start")->second.x-3,map.find("start")->second.y-3);
