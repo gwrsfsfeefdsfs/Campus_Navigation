@@ -1,8 +1,8 @@
-E:/Campus_Navigation/cmake-build-debug/CMakeFiles/CampusNavigation.dir
-E:/Campus_Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Campus_Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-E:/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/NavigationModule.dir
-E:/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/OperationalModule.dir
-E:/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/StorageModule.dir
-E:/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/edit_cache.dir
-E:/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/rebuild_cache.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/CampusNavigation.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/NavigationModule.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/OperationalModule.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/StorageModule.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/edit_cache.dir
+D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/rebuild_cache.dir

@@ -8,13 +8,15 @@
 #include "Module/NavigationModule.h"
 #include "Module/OperationalModule.h"
 #include "Module/StorageModule.h"
-
+#include <cmath>
 #include <map>
 
-
+StorageModule storageT;
 class Menu {
+public:
     MOUSEMSG m{};
-public:  Menu(StorageModule storage) {
+
+      Menu() {
         initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
@@ -26,34 +28,34 @@ public:  Menu(StorageModule storage) {
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
         drawAlpha(&img2, 0, 0);
-        std::unordered_map <std::string, Node>map=storage.getNodes();
+        std::unordered_map <std::string, Node>map=storageT.getNodes();
     Node temp;
-    for(auto kv: map){
-        IMAGE img;
-        loadimage(&img, "../temp233.png",10,10);
-        drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-    }
-   std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storage.getAdjMatrix();
-    for(auto kv: map1){
-
-
-
-            auto ts=map.find(kv.first);
-        for(auto kc:  map1[kv.first]) {
-            auto te=map.find(kc.first);
-            LINE(ts->second,te->second,0);
-        }
-    }
+    // for(auto kv: map){
+    //     IMAGE img;
+    //     loadimage(&img, "../temp233.png",10,10);
+    //     drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+    // }
+   std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
+    // for(auto kv: map1){
+    //
+    //
+    //
+    //         auto ts=map.find(kv.first);
+    //     for(auto kc:  map1[kv.first]) {
+    //         auto te=map.find(kc.first);
+    //         LINE(ts->second,te->second,0);
+    //     }
+    // }
     while (1) {
         m = GetMouseMsg();
 
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
-                if (nodeNum==10) {
+                if (nodeNum==2) {
                     drawAlpha(&img2,0,0);
-                 for (int i=0;i<=9;i++) {
-                     po[i].x=0;
-                     po[i].y=0;
+                 for (int i=0;i<=2;i++) {
+                   storageT.deleteNode("start");
+                     storageT.deleteNode("end");
 
                  }
                     nodeNum=0;
@@ -62,10 +64,10 @@ public:  Menu(StorageModule storage) {
                 loadimage(&img, "../temp233.png",10,10);
                 drawAlpha(&img,m.x-3,m.y-3);
                 nodeNum+=1;
-                po[nodeNum].x=m.x;
-                po[nodeNum].y=m.y;
+               if (nodeNum==1)storageT.insertNode("start",m.x,m.y,0);
+                if (nodeNum==2)storageT.insertNode("end",m.x,m.y,0);
                 if (nodeNum>=2) {
-                    LINE(po[nodeNum-1],po[nodeNum],10);
+                   drawWay();
 
                 }
             }
@@ -80,17 +82,7 @@ public:  Menu(StorageModule storage) {
 
 
 }
-    static void drawWay(Node a,Node b)
-    {
 
-
-
-
-
-
-
-
-}
     void LINE(Node a,Node b,int SLEEP)
 {
 
@@ -117,8 +109,7 @@ public:  Menu(StorageModule storage) {
         Sleep(SLEEP);
     }
 }
-    static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y)
-{
+ static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y){
 
     DWORD *dst = GetImageBuffer();
     DWORD *draw = GetImageBuffer();
@@ -150,6 +141,105 @@ public:  Menu(StorageModule storage) {
         }
     }
 }
+    static void drawWay(){
+    short numb=1000;
+    short numa=1000;
+    int tap;
+    short tempx,tempy;
+    std::string drawPo[100];
+    std::string tempN;
+    std::string p1,p2;
+          std::unordered_map <std::string, Node>map=storageT.getNodes();
+          std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
+    for(auto kv: map){
+        if (kv.first!="start") {
+            short tempNum;
+            tempNum=sqrt(pow(kv.second.x -map.find("start")->second.x, 2) + pow(kv.second.y - map.find("start")->second.y, 2));
+            if(tempNum<numa) {
+                numa=tempNum;
+                p1=kv.first;
+            }
+        }
+    }
+
+    for(auto kv: map){
+         if (kv.first!="end") {
+          double tempNum;
+            tempNum=sqrt(pow(kv.second.x -map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
+             if(tempNum<numb) {
+                numb=tempNum;
+              p2=kv.first;
+            }
+         }
+     }
+
+     for(auto kv: map1[p1]){
+         short tempNum;
+         int temptag;
+         tempNum=PointToSegDist(map.find("start")->second.x,map.find("start")->second.y,map.find(p1)->second.x,map.find(p1)->second.y,map.find(kv.first)->second.x,map.find(kv.first)->second.y,tempx,tempy,temptag);
+         if(tempNum<=numa) {
+             numa=tempNum;
+             tempN=kv.first;
+             tap=temptag;
+        }
+     }
+     numa=PointToSegDist(map.find("start")->second.x,map.find("start")->second.y,map.find(p1)->second.x,map.find(p1)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y,tempx,tempy,tap);
+     if (tap==0) {
+         storageT.insertNode("start1",tempx,tempy,tap);
+         storageT.insertRoad("start","start1");
+         storageT.insertRoad("start1",p1);
+    }
+
+     else  storageT.insertRoad("start",p1);
+
+     for(auto kv: map1[p2]){
+         short tempNum;
+         tempNum=PointToSegDist(map.find("end")->second.x,map.find("end")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(kv.first)->second.x,map.find(kv.first)->second.y,tempx,tempy,tap);
+        if(tempNum<=numb) {
+             numb=tempNum;
+             tempN=kv.first;
+         }
+      }
+     numb=PointToSegDist(map.find("end")->second.x,map.find("end")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y,tempx,tempy,tap);
+     if (tap==0) {
+         storageT.insertNode("end1",tempx,tempy,tap);
+         storageT.insertRoad("end1","end");
+         storageT.insertRoad(p2,"end1");
+      }
+     else  storageT.insertRoad(p2,"end");
+          NavigationModule go(storageT);
+      std::cout <<  go.findShortestPath("start","end");;
+
+      for (int i=0;i<=99;i++) {
+
+
+
+      }
+
+
+
+}
+
+   static  double PointToSegDist(double x, double y, double x1, double y1, double x2, double y2,double cx,double cy,int tag)
+      {
+          double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
+          if (cross <= 0) {
+              tag=1;
+              return sqrt((x - x1) * (x - x1) + (y - y1) * (y - y1));
+
+          }
+          double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+          if (cross >= d2) {
+              tag=1;
+              return sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
+          }
+          tag=0;
+          double r = cross / d2;  //相似三角形原理求出c点的坐标
+          double px = x1 + (x2 - x1) * r;
+          double py = y1 + (y2 - y1) * r;
+          return sqrt((x - px) * (x - px) + (py - y) * (py - y));
+      }
 };
+
 
 #endif //MENU_H
