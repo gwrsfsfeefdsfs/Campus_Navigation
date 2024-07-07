@@ -12,6 +12,8 @@
 #include <map>
 
 StorageModule storageT;
+NavigationModule navigation(storageT);
+
 class Menu {
 public:
     MOUSEMSG m{};
