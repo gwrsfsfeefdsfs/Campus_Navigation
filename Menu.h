@@ -93,7 +93,7 @@ public:
     short x2;
     short y2;
     IMAGE img;
-    loadimage(&img, "../temp233.png",10,10);
+
     for(int i=0;i<=20;i++)
     {
         LINESTYLE Style;
@@ -106,8 +106,7 @@ public:
         line(a.x,a.y,x2,y2);
         x1=x2;
         y1=y2;
-        drawAlpha(&img,a.x-3,a.y-3);
-        drawAlpha(&img,b.x-3,b.y-3);
+
         Sleep(SLEEP);
     }
 }
@@ -193,10 +192,16 @@ public:
          storageT.insertNode("start1",tempx,tempy,tap);
          storageT.insertRoad("start","start1");
          storageT.insertRoad("start1",p1);
+         map=storageT.getNodes();
+         map1=storageT.getAdjMatrix();
 
     }
 
-     else  storageT.insertRoad("start",p1);
+     else  {
+         storageT.insertRoad("start",p1);
+         map=storageT.getNodes();
+         map1=storageT.getAdjMatrix();
+     }
 
      for(auto kv: map1[p2]){
          short tempNum;
@@ -214,20 +219,27 @@ public:
          storageT.insertNode("end1",tempx,tempy,tap);
          storageT.insertRoad("end1","end");
          storageT.insertRoad(p2,"end1");
+         map=storageT.getNodes();
+         map1=storageT.getAdjMatrix();
       }
-     else  storageT.insertRoad(p2,"end");
-          NavigationModule go(storageT);
-      std::cout <<  go.findShortestPath("start","end",drawPo);;
-
-      for (int i=0;i<=99;i++) {
-       if (i>=1) {
-           if (drawPo[i]!="") {
-               LINE(storageT.getNodes().find(drawPo[i-1])->second,storageT.getNodes().find(drawPo[i])->second,10);
-           }
-       }
+     else  {
+         storageT.insertRoad(p2,"end");
+         map=storageT.getNodes();
+         map1=storageT.getAdjMatrix();
+     }
 
 
-      }
+         std::cout <<  navigation.findShortestPath("start","end");
+          std::vector<std::string> a=navigation.getShortestPath();
+          for (int i = 0; i<a.size(); ++i)
+          {
+              std::cout << a[i+1]<<" ";
+              LINE(map.find(a[i])->second,map.find(a[i+1])->second,50);
+              IMAGE img;
+              loadimage(&img, "../temp233.png",10,10);
+              drawAlpha(&img,map.find("start")->second.x-3,map.find("start")->second.y-3);
+              drawAlpha(&img,map.find("end")->second.x-3,map.find("end")->second.y-3);
+          }
 
 
 

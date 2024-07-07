@@ -1,4 +1,5 @@
 #include "NavigationModule.h"
+#include <algorithm>
 #include <limits>
 #include <queue>
 #include <unordered_map>
@@ -51,7 +52,6 @@ double NavigationModule::findShortestPath(const std::string& start, const std::s
         if (at == start) break;
     }
     std::reverse(shortestPath.begin(), shortestPath.end());
-
     return distances[end];
 }
 
