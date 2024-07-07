@@ -14,7 +14,7 @@ public:
     NavigationModule(StorageModule& storage);
 
     // 查找最短路径
-    double findShortestPath(const std::string& start, const std::string& end);
+    double findShortestPath(const std::string& start, const std::string& end,std::string LP[]);
 };
 
 #endif // NAVIGATION_MODULE_H

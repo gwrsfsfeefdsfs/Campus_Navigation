@@ -7,12 +7,12 @@
 NavigationModule::NavigationModule(StorageModule& storage) : storage(storage) {}
 
 // 使用 Dijkstra 算法查找最短路径
-double NavigationModule::findShortestPath(const std::string& start, const std::string& end) {
+double NavigationModule::findShortestPath(const std::string& start, const std::string &end, std::string LP[]) {
     const auto& adjMatrix = storage.getAdjMatrix();
     if (adjMatrix.find(start) == adjMatrix.end() || adjMatrix.find(end) == adjMatrix.end()) {
         return std::numeric_limits<double>::infinity();
     }
-
+    std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storage.getAdjMatrix();
     // 初始化距离
     std::unordered_map<std::string, double> distances;
     for (const auto& pair : adjMatrix) {
@@ -23,17 +23,18 @@ double NavigationModule::findShortestPath(const std::string& start, const std::s
     // 优先队列存储节点和距离
     std::priority_queue<std::pair<double, std::string>, std::vector<std::pair<double, std::string>>, std::greater<>> pq;
     pq.push({0, start});
-
+   int n=0;
     // 处理队列中的节点
     while (!pq.empty()) {
         auto [dist, node] = pq.top();
+        LP[n]=node;
+        n += 1;
         pq.pop();
 
         if (node == end) {
             return dist;
         }
-
-        for (const auto& neighbor : adjMatrix.at(node)) {
+        for (const auto& neighbor : map1[node]) {
             double newDist = dist + neighbor.second;
             if (newDist < distances[neighbor.first]) {
                 distances[neighbor.first] = newDist;
