@@ -74,31 +74,14 @@ public:
         //         LINE(ts->second,te->second,0);
         //     }
         // }
-        centerText("出发地",630,100,36,140);
-        centerText("目的地",630,172,30,140);
-        centerText("路程距离",630,239,40,140);
-        centerText("重选",633,345,28,147);
+        centerText("出发地",630,100,36,140,20);
+        centerText("目的地",630,172,30,140,20);
+        centerText("路程距离",630,239,40,140,20);
+        centerText("重选",633,345,28,147,20);
         // 主循环
         while (1) {
-            if(tempsx>=0&&tempsy>=0) {
-                    std::string text = tempsx+" "+tempsy;
-                    const char *cText = text.data();
-                    drawAlpha(&img3, 629, 132);
-                    centerText(cText,629,132,37,140);
 
-                }
-                if(tempex>=0&&tempey>=0){
-                    std::string text = tempex+" "+tempey;
-                    const char *cText = text.data();
-                    drawAlpha(&img3, 629, 198);
-                    centerText(cText,630,198,37,140);
-                }
-                if(road>=0){
-                    std::string text = " "+road;
-                    const char *cText = text.data();
-                    drawAlpha(&img3, 629, 273);
-                    centerText(cText,630,239,36,140);
-                }
+
             m = GetMouseMsg();
             bool overNode = false;
             for (auto& kv : map) {
@@ -123,13 +106,26 @@ public:
                         storageT.reClear();
                         storageT.generateTestData();
                         nodeNum = 0;
+                        drawAlpha(&img3, 629, 132);
+                        drawAlpha(&img3, 629, 198);
+                        drawAlpha(&img3, 629, 273);
                     }
                     IMAGE img;
                     loadimage(&img, "../temp233.png", 10, 10);
                     drawAlpha(&img, m.x - 3, m.y - 3);
                     nodeNum += 1;
-                    if (nodeNum == 1) storageT.insertNode("start", m.x, m.y, 0);
-                    if (nodeNum == 2) storageT.insertNode("end", m.x, m.y, 0);
+                    if (nodeNum == 1) {
+                        storageT.insertNode("start", m.x, m.y, 0);
+                        std::string str=m.x+" "+m.y;
+                        const char* cstr = str.c_str();
+                        centerText(cstr,629,132,37,140,10);
+                    }
+                    if (nodeNum == 2) {
+                        storageT.insertNode("end", m.x, m.y, 0);
+                        std::string str=m.x+" "+m.y;
+                        const char* cstr = str.c_str();
+                        centerText(cstr,630,198,37,140,10);
+                    }
                     if (nodeNum >= 2) {
                         drawWay();
                     }
@@ -298,7 +294,7 @@ public:
             IMAGE img;
             loadimage(&img, "../temp233.png", 10, 10);
             drawAlpha(&img, map.find("start")->second.x - 3, map.find("start")->second.y - 3);
-            drawAlpha(&img, map.find("start")->second.x - 3, map.find("end")->second.y - 3);
+            drawAlpha(&img, map.find("end")->second.x - 3, map.find("end")->second.y - 3);
         }
     }
 
@@ -343,8 +339,8 @@ public:
     }
 
     // 文字居中显示函数
-    void centerText(const char *str1, int rx, int ry, int rh, int rw) {
-        settextstyle(20, 0, "System");
+    void centerText(const char *str1, int rx, int ry, int rh, int rw,int size) {
+        settextstyle(size, 0, "System");
         settextcolor(WHITE);
         int hSpace = (rw - textwidth(str1)) / 2;
         int vSpace = (rh - textheight(str1)) / 2;
