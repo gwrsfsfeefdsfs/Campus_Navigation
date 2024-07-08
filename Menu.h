@@ -32,22 +32,22 @@ public:
         drawAlpha(&img2, 0, 0);
         std::unordered_map <std::string, Node>map=storageT.getNodes();
     Node temp;
-    // for(auto kv: map){
-    //     IMAGE img;
-    //     loadimage(&img, "../temp233.png",10,10);
-    //     drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-    // }
+     for(auto kv: map){
+         IMAGE img;
+         loadimage(&img, "../temp233.png",10,10);
+         drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+     }
    std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
-    // for(auto kv: map1){
-    //
-    //
-    //
-    //         auto ts=map.find(kv.first);
-    //     for(auto kc:  map1[kv.first]) {
-    //         auto te=map.find(kc.first);
-    //         LINE(ts->second,te->second,0);
-    //     }
-    // }
+     for(auto kv: map1){
+
+
+
+             auto ts=map.find(kv.first);
+         for(auto kc:  map1[kv.first]) {
+            auto te=map.find(kc.first);
+             LINE(ts->second,te->second,0);
+        }
+     }
     while (1) {
         m = GetMouseMsg();
 
