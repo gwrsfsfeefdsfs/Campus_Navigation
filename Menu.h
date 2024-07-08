@@ -14,11 +14,11 @@
 #include <map>
 #include "Image/image.h"
 
-// å®ä¾‹åŒ–å­˜å‚¨å’Œå¯¼èˆªæ¨¡å—
+// ÊµÀı»¯´æ´¢ºÍµ¼º½Ä£¿é
 StorageModule storageT;
 NavigationModule navigation(storageT);
 
-//Menu ç±»å®šä¹‰
+//Menu Àà¶¨Òå
 class Menu {
 public:
     MOUSEMSG m{};
@@ -27,32 +27,42 @@ public:
     std::string currentNodeKey;
     bool isOverNode;
 
-    // æ„é€ å‡½æ•°
+    // ¹¹Ôìº¯Êı
     Menu() {
-        // åˆå§‹åŒ–å›¾å½¢ç•Œé¢
+        // ³õÊ¼»¯Í¼ĞÎ½çÃæ
         initgraph(800, 600, EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
-
+        int tempsx=-1;
+        int tempsy=-1;
+        int tempex=-1;
+        int tempey=-1;
+        int road=-1;
         IMAGE img1;
         IMAGE img2;
+        IMAGE img3;
         int nodeNum = 0;
         Node po[M];
 
-        // åŠ è½½å›¾åƒ
+        // ¼ÓÔØÍ¼Ïñ
         loadimage(&img1, "../UI.png", 800, 600);
         loadimage(&img2, "../guetMap.png", 600, 600);
+        loadimage(&img3, "../temp2333.png", 146, 40);
         drawAlpha(&img1, 0, 0);
         drawAlpha(&img2, 0, 0);
-
-        // è·å–èŠ‚ç‚¹å’Œé‚»æ¥çŸ©é˜µ
+        drawAlpha(&img3, 629, 132);
+        drawAlpha(&img3, 629, 198);
+        drawAlpha(&img3, 629, 274);
+        // »ñÈ¡½ÚµãºÍÁÚ½Ó¾ØÕó
         setbkmode(TRANSPARENT);
         std::unordered_map<std::string, Node> map = storageT.getNodes();
         for(auto kv: map){
-            IMAGE img;
-            loadimage(&img, "../temp233.png",10,10);
-            drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-        }
+            if (kv.second.type==3)
+                {
+                    IMAGE img;
+                    loadimage(&img, "../temp233.png",10,10);
+                    drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                }
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
         // for(auto kv: map1){
         //
@@ -64,15 +74,37 @@ public:
         //         LINE(ts->second,te->second,0);
         //     }
         // }
-
-        // ä¸»å¾ªç¯
+        centerText("³ö·¢µØ",630,100,36,140);
+        centerText("Ä¿µÄµØ",630,172,30,140);
+        centerText("Â·³Ì¾àÀë",630,239,40,140);
+        centerText("ÖØÑ¡",633,345,28,147);
+        // Ö÷Ñ­»·
         while (1) {
+            if(tempsx>=0&&tempsy>=0) {
+                    std::string text = tempsx+" "+tempsy;
+                    const char *cText = text.data();
+                    drawAlpha(&img3, 629, 132);
+                    centerText(cText,629,132,37,140);
+
+                }
+                if(tempex>=0&&tempey>=0){
+                    std::string text = tempex+" "+tempey;
+                    const char *cText = text.data();
+                    drawAlpha(&img3, 629, 198);
+                    centerText(cText,630,198,37,140);
+                }
+                if(road>=0){
+                    std::string text = " "+road;
+                    const char *cText = text.data();
+                    drawAlpha(&img3, 629, 273);
+                    centerText(cText,630,239,36,140);
+                }
             m = GetMouseMsg();
             bool overNode = false;
             for (auto& kv : map) {
                 Node node = kv.second;
                 if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5 && node.type==3) {
-                    tooltip.show(m.x, m.y, "æ¡‚ç”µ", "../guetMap.png");
+                    tooltip.show(m.x, m.y, "¹ğµç", "../guetMap.png");
                     overNode = true;
                     break;
                 }
@@ -83,7 +115,7 @@ public:
             }
             isOverNode = overNode;
 
-            // åˆ¤æ–­é¼ æ ‡åœ¨åœ°å›¾åŒºåŸŸå†…
+            // ÅĞ¶ÏÊó±êÔÚµØÍ¼ÇøÓòÄÚ
             if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
                 if (m.uMsg == WM_LBUTTONDOWN) {
                     if (nodeNum == 2) {
@@ -104,7 +136,7 @@ public:
                 }
             }
 
-            // æ£€æµ‹æŒ‰é’®ç‚¹å‡»
+            // ¼ì²â°´Å¥µã»÷
             if (m.uMsg == WM_LBUTTONDOWN) std::cout << m.x << " " << m.y << "\n";
             if (m.x >= 632 && m.x <= 774 && m.y >= 136 && m.y <= 170) {
                 if (m.uMsg == WM_LBUTTONDOWN) std::cout << 1 << "\n";
@@ -121,7 +153,7 @@ public:
         }
     }
 
-    // ç»˜åˆ¶çº¿æ®µå‡½æ•°
+    // »æÖÆÏß¶Îº¯Êı
     static void LINE(Node a, Node b, int SLEEP) {
         short x1 = a.x;
         short y1 = a.y;
@@ -144,7 +176,7 @@ public:
         }
     }
 
-    // ç»˜åˆ¶å¸¦é€æ˜åº¦çš„å›¾åƒ
+    // »æÖÆ´øÍ¸Ã÷¶ÈµÄÍ¼Ïñ
     static void drawAlpha(IMAGE* picture, int picture_x, int picture_y) {
         DWORD *dst = GetImageBuffer();
         DWORD *draw = GetImageBuffer();
@@ -174,7 +206,7 @@ public:
         }
     }
 
-    // ç»˜åˆ¶è·¯å¾„
+    // »æÖÆÂ·¾¶
     static void drawWay() {
         short numb = 1000;
         short numa = 1000;
@@ -185,7 +217,7 @@ public:
         std::unordered_map<std::string, Node> map = storageT.getNodes();
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
 
-        // æŸ¥æ‰¾ä¸startèŠ‚ç‚¹æœ€è¿‘çš„èŠ‚ç‚¹
+        // ²éÕÒÓëstart½Úµã×î½üµÄ½Úµã
         for (auto kv : map) {
             if (kv.first != "start") {
                 short tempNum = sqrt(pow(kv.second.x - map.find("start")->second.x, 2) + pow(kv.second.y - map.find("start")->second.y, 2));
@@ -196,7 +228,7 @@ public:
             }
         }
 
-        // æŸ¥æ‰¾ä¸endèŠ‚ç‚¹æœ€è¿‘çš„èŠ‚ç‚¹
+        // ²éÕÒÓëend½Úµã×î½üµÄ½Úµã
         for (auto kv : map) {
             if (kv.first != "end") {
                 double tempNum = sqrt(pow(kv.second.x - map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
@@ -207,7 +239,7 @@ public:
             }
         }
 
-        // åœ¨startå’Œæœ€è¿‘èŠ‚ç‚¹ä¹‹é—´æ’å…¥æ–°èŠ‚ç‚¹
+        // ÔÚstartºÍ×î½ü½ÚµãÖ®¼ä²åÈëĞÂ½Úµã
         for (auto kv : map1[p1]) {
             short tempNum = PointToSegDist(map.find("start")->second.x, map.find("start")->second.y, map.find(p1)->second.x, map.find(p1)->second.y, map.find(kv.first)->second.x, map.find(kv.first)->second.y);
             if (tempNum <= numa) {
@@ -233,7 +265,7 @@ public:
             map1 = storageT.getAdjMatrix();
         }
 
-        // åœ¨endå’Œæœ€è¿‘èŠ‚ç‚¹ä¹‹é—´æ’å…¥æ–°èŠ‚ç‚¹
+        // ÔÚendºÍ×î½ü½ÚµãÖ®¼ä²åÈëĞÂ½Úµã
         for (auto kv : map1[p2]) {
             short tempNum = PointToSegDist(map.find("end")->second.x, map.find("end")->second.y, map.find(p2)->second.x, map.find(p2)->second.y, map.find(kv.first)->second.x, map.find(kv.first)->second.y);
             if (tempNum <= numb) {
@@ -258,18 +290,19 @@ public:
             map1 = storageT.getAdjMatrix();
         }
 
-        // ç»˜åˆ¶æœ€çŸ­è·¯å¾„
+        // »æÖÆ×î¶ÌÂ·¾¶
         std::cout << navigation.findShortestPath("start", "end");
         std::vector<std::string> a = navigation.getShortestPath();
         for (int i = 0; i < a.size(); ++i) {
             if (i + 1 <= a.size() - 1) LINE(map.find(a[i])->second, map.find(a[i + 1])->second, 10);
             IMAGE img;
             loadimage(&img, "../temp233.png", 10, 10);
+            drawAlpha(&img, map.find("start")->second.x - 3, map.find("start")->second.y - 3);
             drawAlpha(&img, map.find("start")->second.x - 3, map.find("end")->second.y - 3);
         }
     }
 
-    // è®¡ç®—ç‚¹åˆ°çº¿æ®µçš„è·ç¦»
+    // ¼ÆËãµãµ½Ïß¶ÎµÄ¾àÀë
     static double PointToSegDist(double x, double y, double x1, double y1, double x2, double y2) {
         double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
         if (cross <= 0) {
@@ -279,24 +312,24 @@ public:
         if (cross >= d2) {
             return sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
         }
-        double r = cross / d2;  // ç›¸ä¼¼ä¸‰è§’å½¢åŸç†æ±‚å‡ºcç‚¹çš„åæ ‡
+        double r = cross / d2;  // ÏàËÆÈı½ÇĞÎÔ­ÀíÇó³öcµãµÄ×ø±ê
         double px = x1 + (x2 - x1) * r;
         double py = y1 + (y2 - y1) * r;
         return sqrt((x - px) * (x - px) + (py - y) * (py - y));
     }
 
-    // è®¡ç®—ç‚¹åˆ°çº¿æ®µçš„å‚è¶³
+    // ¼ÆËãµãµ½Ïß¶ÎµÄ´¹×ã
     static Node PointToSegNode(double x, double y, double x1, double y1, double x2, double y2) {
         double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
         double d2 = (x2 - x1) * (x2 - x2) + (y2 - y1) * (y2 - y1);
-        double r = cross / d2;  // ç›¸ä¼¼ä¸‰è§’å½¢åŸç†æ±‚å‡ºcç‚¹çš„åæ ‡
+        double r = cross / d2;  // ÏàËÆÈı½ÇĞÎÔ­ÀíÇó³öcµãµÄ×ø±ê
         double px = x1 + (x2 - x1) * r;
         double py = y1 + (y2 - y1) * r;
         Node a = {"aa", (short)px, (short)py, 0};
         return a;
     }
 
-    // åˆ¤æ–­ç‚¹æ˜¯å¦åœ¨çº¿æ®µä¸Š
+    // ÅĞ¶ÏµãÊÇ·ñÔÚÏß¶ÎÉÏ
     static int PointToSegStyle(double x, double y, double x1, double y1, double x2, double y2) {
         double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
         if (cross <= 0) {
@@ -309,9 +342,9 @@ public:
         return 0;
     }
 
-    // æ–‡å­—å±…ä¸­æ˜¾ç¤ºå‡½æ•°
-    void centerText(char str1[], int rx, int ry, int rh, int rw) {
-        settextstyle(30, 0, "System");
+    // ÎÄ×Ö¾ÓÖĞÏÔÊ¾º¯Êı
+    void centerText(const char *str1, int rx, int ry, int rh, int rw) {
+        settextstyle(20, 0, "System");
         settextcolor(WHITE);
         int hSpace = (rw - textwidth(str1)) / 2;
         int vSpace = (rh - textheight(str1)) / 2;

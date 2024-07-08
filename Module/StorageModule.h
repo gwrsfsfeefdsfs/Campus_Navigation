@@ -31,7 +31,7 @@ public:
     // 插入节点
     void insertNode(const std::string& name, double x, double y,int type);
     //插入建筑节点图片信息
-    void insertNode2( const std::string& name,const std::string& imgepath2, const std::string& imagetext2);
+    void insertNode_building( const std::string& name,const std::string& imgepath2, const std::string& imagetext2);
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
     // 删除节点
