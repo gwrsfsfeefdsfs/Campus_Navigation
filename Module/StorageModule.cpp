@@ -1,5 +1,6 @@
 #include "StorageModule.h"
 #include <cmath>
+#include <iostream>
 
 // 构造函数，初始化测试数据
 StorageModule::StorageModule() {
@@ -64,10 +65,17 @@ const std::unordered_map<std::string, Node>& StorageModule::getNodes() const {
 const std::unordered_map<std::string, std::unordered_map<std::string, double>>& StorageModule::getAdjMatrix() const {
     return adjMatrix;
 }
+void StorageModule::reClear(){
+  nodes.clear();
+    adjMatrix.clear();
 
+
+};
 // 初始化数据
 void StorageModule::generateTestData() {
 //彩虹大道路段
+
+
     insertNode("彩虹大道起点", 153, 562, 1);
     insertNode("彩虹大道与研学路交点1", 136, 538,1);
     insertNode("彩虹大道与研学路交点2", 121, 502,1);
