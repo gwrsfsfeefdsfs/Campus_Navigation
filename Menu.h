@@ -102,13 +102,19 @@ public:
             if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
                 if (m.uMsg == WM_LBUTTONDOWN) {
                     if (nodeNum == 2) {
-                        drawAlpha(&img2, 0, 0);
                         storageT.reClear();
                         storageT.generateTestData();
                         nodeNum = 0;
+                        cleardevice();
+                        drawAlpha(&img1, 0, 0);
+                        drawAlpha(&img2, 0, 0);
                         drawAlpha(&img3, 629, 132);
                         drawAlpha(&img3, 629, 198);
-                        drawAlpha(&img3, 629, 273);
+                        drawAlpha(&img3, 629, 274);
+                        centerText("出发地",630,100,36,140,20);
+                        centerText("目的地",630,172,30,140,20);
+                        centerText("路程距离",630,239,40,140,20);
+                        centerText("重选",633,345,28,147,20);
                         for(auto kv: map){
                             if (kv.second.type==3)
                             {
@@ -144,7 +150,30 @@ public:
             // 检测按钮点击
             if (m.uMsg == WM_LBUTTONDOWN) std::cout << m.x << " " << m.y << "\n";
             if (m.x >= 632 && m.x <= 774 && m.y >= 345 && m.y <= 376) {
-                if (m.uMsg == WM_LBUTTONDOWN) std::cout << 4 << "\n";
+                if (m.uMsg == WM_LBUTTONDOWN) {
+
+
+                    storageT.reClear();
+                    storageT.generateTestData();
+                    nodeNum = 0;
+                    cleardevice();
+                    drawAlpha(&img1, 0, 0);
+                    drawAlpha(&img2, 0, 0);
+                    drawAlpha(&img3, 629, 132);
+                    drawAlpha(&img3, 629, 198);
+                    drawAlpha(&img3, 629, 274);
+                    centerText("出发地",630,100,36,140,20);
+                    centerText("目的地",630,172,30,140,20);
+                    centerText("路程距离",630,239,40,140,20);
+                    centerText("重选",633,345,28,147,20);
+                    for(auto kv: map){
+                        if (kv.second.type==3)
+                        {
+                            IMAGE img;
+                            loadimage(&img, "../temp233.png",10,10);
+                            drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                    }
+                }
             }
         }
     }
