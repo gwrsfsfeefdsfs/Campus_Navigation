@@ -94,7 +94,7 @@ void StorageModule::generateTestData() {
     insertNode("彩虹大道与笃行路交点（中央食堂）", 350, 182,3);
     insertNode("彩虹大道与乐学路和厚学路交点", 438, 154,1);
     insertNode("彩虹大道拐点2（思进湖）", 269, 361,3);
-    insertNode("彩虹大道拐点3（足球场）", 279, 281,1);
+    insertNode("彩虹大道拐点3（足球场）", 276, 284,1);
     insertNode("彩虹大道拐点4（四创中心）", 313, 209,3);
     insertNode("彩虹大道拐点5（二三教学楼）", 395, 168,3);
     insertNode("彩虹大道拐点6（燕园）", 490, 134,1);
