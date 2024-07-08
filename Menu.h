@@ -18,6 +18,7 @@
 StorageModule storageT;
 NavigationModule navigation(storageT);
 
+//Menu 类定义
 class Menu {
 public:
     MOUSEMSG m{};
@@ -47,7 +48,22 @@ public:
         // 获取节点和邻接矩阵
         setbkmode(TRANSPARENT);
         std::unordered_map<std::string, Node> map = storageT.getNodes();
+//        for(auto kv: map){
+//            IMAGE img;
+//            loadimage(&img, "../temp233.png",10,10);
+//            drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+//        }
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
+//        for(auto kv: map1){
+//
+//
+//
+//            auto ts=map.find(kv.first);
+//            for(auto kc:  map1[kv.first]) {
+//                auto te=map.find(kc.first);
+//                LINE(ts->second,te->second,0);
+//            }
+//        }
 
         // 主循环
         while (1) {
@@ -67,6 +83,7 @@ public:
             }
             isOverNode = overNode;
 
+            // 判断鼠标在地图区域内
             if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
                 if (m.uMsg == WM_LBUTTONDOWN) {
                     if (nodeNum == 2) {
