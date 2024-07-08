@@ -40,7 +40,7 @@ public:
 
         //文字
         settextcolor(BLACK);
-        outtextxy(x + 150, y + 70, text.c_str());
+        outtextxy(x + 80, y + 30, text.c_str());
     }
 
     void hide() {
