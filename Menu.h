@@ -48,11 +48,11 @@ public:
         // 获取节点和邻接矩阵
         setbkmode(TRANSPARENT);
         std::unordered_map<std::string, Node> map = storageT.getNodes();
-        for(auto kv: map){
-            IMAGE img;
-            loadimage(&img, "../temp233.png",10,10);
-            drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-        }
+        // for(auto kv: map){
+        //     IMAGE img;
+        //     loadimage(&img, "../temp233.png",10,10);
+        //     drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+        // }
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
         // for(auto kv: map1){
         //
