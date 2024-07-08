@@ -42,6 +42,10 @@ public:
         drawAlpha(&img2, 0, 0);
 
         // 获取节点和邻接矩阵
+
+
+
+          setbkmode(TRANSPARENT);
         std::unordered_map <std::string, Node>map=storageT.getNodes();
         Node temp;
 //        for(auto kv: map){
@@ -81,11 +85,8 @@ public:
             if (m.uMsg == WM_LBUTTONDOWN) {
                 if (nodeNum==2) {
                     drawAlpha(&img2,0,0);
-                    for (int i=0;i<=2;i++) {
-                        storageT.deleteNode("start");
-                        storageT.deleteNode("end");
-
-                    }
+                    storageT.reClear();
+                    storageT.generateTestData();
                     nodeNum=0;
                 }
                 IMAGE img;
@@ -307,6 +308,16 @@ static  int PointToSegStyle(double x, double y, double x1, double y1, double x2,
     return 0;
 }
 
+    void centerText( char str1[],int rx,int ry,int rh,int rw)
+    //文字居中
+    {
+          settextstyle(30, 0, "System");
+          settextcolor(WHITE);
+          int hSpace = (rw - textwidth(str1)) / 2;
+          int vSpace = (rh - textheight(str1)) / 2;
+          outtextxy(rx+hSpace, ry+vSpace, str1);
+
+    }
 };
 
 

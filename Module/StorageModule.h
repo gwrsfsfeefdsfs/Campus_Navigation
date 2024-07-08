@@ -41,7 +41,7 @@ public:
     const std::unordered_map<std::string, Node>& getNodes() const;
     // 获取邻接矩阵
     const std::unordered_map<std::string, std::unordered_map<std::string, double>>& getAdjMatrix() const;
-
+    void reClear();
     // 生成测试数据
     void generateTestData();
 };
