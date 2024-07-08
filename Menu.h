@@ -10,14 +10,17 @@
 #include "Module/StorageModule.h"
 #include <cmath>
 #include <map>
-
+#include "Image/image.h"
 StorageModule storageT;
 NavigationModule navigation(storageT);
 
 class Menu {
 public:
     MOUSEMSG m{};
-
+ std::unordered_map<std::string, Node> nodes;
+    Tooltip tooltip;
+    std::string currentNodeKey;
+    bool isOverNode;
       Menu() {
         initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
@@ -50,6 +53,20 @@ public:
      }
     while (1) {
         m = GetMouseMsg();
+         bool overNode = false;
+            for (auto& kv : map) {
+                Node node = kv.second;
+                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5) {
+                    tooltip.show(m.x, m.y, "桂电", "../guetMap.png");
+                    overNode = true;
+                    break;
+                }
+            }
+
+            if (!overNode && isOverNode) {
+                tooltip.hide();
+            }
+            isOverNode = overNode;
 
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
