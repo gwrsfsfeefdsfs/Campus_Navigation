@@ -9,10 +9,7 @@
 using namespace std;
 
 int main(){
-    // 创建存储模块对象
 
-
-    // 在这里可以编写主程序的逻辑
     Menu a;
 
     return 0;
