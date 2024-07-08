@@ -22,35 +22,36 @@ public:
     std::string currentNodeKey;
     bool isOverNode;
       Menu() {
-        initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
+        initgraph(800, 600,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
         IMAGE img1;
         IMAGE img2;
         int nodeNum=0;
         Node po[M];
-        loadimage(&img1, "../UI.png",800,800);
+        loadimage(&img1, "../UI.png",800,600);
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
         drawAlpha(&img2, 0, 0);
         std::unordered_map <std::string, Node>map=storageT.getNodes();
-    Node temp;
-    // for(auto kv: map){
-    //     IMAGE img;
-    //     loadimage(&img, "../temp233.png",10,10);
-    //     drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-    // }
-   std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
-    // for(auto kv: map1){
-    //
-    //
-    //
-    //         auto ts=map.find(kv.first);
-    //     for(auto kc:  map1[kv.first]) {
-    //         auto te=map.find(kc.first);
-    //         LINE(ts->second,te->second,0);
-    //     }
-    // }
+        Node temp;
+
+//     for(auto kv: map){
+//         IMAGE img;
+//         loadimage(&img, "../temp233.png",10,10);
+//         drawAlpha(&img,kv.second.x-3,kv.second.y-3);
+//     }
+        std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
+//     for(auto kv: map1){
+//
+//
+//
+//         auto ts=map.find(kv.first);
+//         for(auto kc:  map1[kv.first]) {
+//            auto te=map.find(kc.first);
+//             LINE(ts->second,te->second,0);
+//        }
+//     }
     while (1) {
         m = GetMouseMsg();
          bool overNode = false;
@@ -209,6 +210,7 @@ public:
          storageT.insertNode("start1",tempx,tempy,tap);
          storageT.insertRoad("start","start1");
          storageT.insertRoad("start1",p1);
+         storageT.insertRoad(tempN,"start1");
          map=storageT.getNodes();
          map1=storageT.getAdjMatrix();
 
@@ -236,6 +238,7 @@ public:
          storageT.insertNode("end1",tempx,tempy,tap);
          storageT.insertRoad("end1","end");
          storageT.insertRoad(p2,"end1");
+         storageT.insertRoad(tempN,"end1");
          map=storageT.getNodes();
          map1=storageT.getAdjMatrix();
       }
@@ -250,7 +253,7 @@ public:
           std::vector<std::string> a=navigation.getShortestPath();
           for (int i = 0; i<a.size(); ++i)
           {
-              if (i+1<=a.size()-1)LINE(map.find(a[i])->second,map.find(a[i+1])->second,50);
+              if (i+1<=a.size()-1)LINE(map.find(a[i])->second,map.find(a[i+1])->second,10);
               IMAGE img;
               loadimage(&img, "../temp233.png",10,10);
               drawAlpha(&img,map.find("start")->second.x-3,map.find("start")->second.y-3);

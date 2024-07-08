@@ -1,8 +1,8 @@
-D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/CampusNavigation.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/NavigationModule.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/OperationalModule.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/StorageModule.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/edit_cache.dir
-D:/git hub/Campus_Navigation/cmake-build-debug/Module/CMakeFiles/rebuild_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/CampusNavigation.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/NavigationModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/OperationalModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/StorageModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/edit_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/rebuild_cache.dir

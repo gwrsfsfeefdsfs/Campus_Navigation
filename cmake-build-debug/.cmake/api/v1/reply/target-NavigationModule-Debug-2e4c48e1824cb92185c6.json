@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Module/libStorageModule.a"
+			"path" : "Module/libNavigationModule.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 12,
+				"line" : 2,
 				"parent" : 0
 			},
 			{
@@ -43,7 +43,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 13,
+				"line" : 3,
 				"parent" : 0
 			}
 		]
@@ -61,11 +61,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "D:/git hub/Campus_Navigation/./EasyX/include"
+					"path" : "C:/Users/Monster/Desktop/Campus-Navigation/./EasyX/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "D:/git hub/Campus_Navigation/Module"
+					"path" : "C:/Users/Monster/Desktop/Campus-Navigation/Module"
 				}
 			],
 			"language" : "CXX",
@@ -83,9 +83,9 @@
 			]
 		}
 	],
-	"id" : "StorageModule::@a67813fb0542b0b3e209",
-	"name" : "StorageModule",
-	"nameOnDisk" : "libStorageModule.a",
+	"id" : "NavigationModule::@a67813fb0542b0b3e209",
+	"name" : "NavigationModule",
+	"nameOnDisk" : "libNavigationModule.a",
 	"paths" : 
 	{
 		"build" : "Module",
@@ -106,7 +106,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Module/StorageModule.cpp",
+			"path" : "Module/NavigationModule.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
