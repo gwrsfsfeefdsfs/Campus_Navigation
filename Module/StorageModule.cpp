@@ -15,8 +15,8 @@ void StorageModule::insertNode(const std::string& name, double x, double y, int 
     nodes[name] = {name, static_cast<short>(x), static_cast<short>(y), type};
 }
 void StorageModule::insertNode2( const std::string& name,const std::string& imgepath2, const std::string& imagetext2){
-    nodes[name]. imagepath= imgepath2;
-    nodes[name].imagetext=imagetext2;
+    nodes[name].imagepath = imgepath2;
+    nodes[name].imagetext = imagetext2;
 }
 // 插入道路，计算并存储两节点间的距离
 void StorageModule::insertRoad(const std::string& from, const std::string& to) {
