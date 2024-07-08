@@ -220,12 +220,34 @@ void StorageModule::generateTestData() {
 
     //新增结点及道路
     insertNode("清苑",250,46,3);
-    insertNode("汀苑",275,118,3);
+    insertNode("泾苑",275,118,3);
     insertNode("桃李园",138,100,3);
     insertNode("花江运动区",378,103,3);
+    insertNode("思援湖运动区",250,289,3);
+    insertNode("思齐湖运动区",366,508,3);
     insertNode("商业街",383,139,3);
     insertNode("中央食堂",360,152,3);
     insertNode("四创中心",269,210,3);
+    insertNode("润苑",51,309,3);
+    insertNode("汀苑",57,468,3);
+    insertNode("溶苑",129,419,3);
+    insertNode("濛苑",248,484,3);
+    insertNode("思进湖",313,357,3);
+    insertNode("思援湖",311,271,3);
+    insertNode("思贤湖",467,360,3);
+    insertNode("相思湖",484,258,3);
+    insertNode("思齐湖",412,508,3);
+    insertNode("燕园",502,163,3);
+    insertNode("仲园餐厅",135,309,3);
+    insertNode("雅园餐厅",281,432,3);
+    insertNode("11，13，14教学楼",373,327,3);
+    insertNode("15，16教学楼",413,360,3);
+    insertNode("1，2，3教学楼",418,181,3);
+    insertNode("图书馆",412,257,3);
+    insertNode("建交与交通工程和机电工程学院",534,334,3);
+    insertNode("工程实训大楼",516,376,3);
+    insertNode("信息与通信学院",445,203,3);
+
 
     insertNode("力港大道新增结点1",237,328,1);
     insertNode("紫荆路新增结点1",109,303,1);
