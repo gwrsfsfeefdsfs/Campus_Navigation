@@ -49,10 +49,12 @@ public:
         setbkmode(TRANSPARENT);
         std::unordered_map<std::string, Node> map = storageT.getNodes();
         for(auto kv: map){
-            IMAGE img;
-            loadimage(&img, "../temp233.png",10,10);
-            drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-        }
+            if (kv.second.type==3)
+                {
+                    IMAGE img;
+                    loadimage(&img, "../temp233.png",10,10);
+                    drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                }
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
         // for(auto kv: map1){
         //
@@ -265,6 +267,7 @@ public:
             if (i + 1 <= a.size() - 1) LINE(map.find(a[i])->second, map.find(a[i + 1])->second, 10);
             IMAGE img;
             loadimage(&img, "../temp233.png", 10, 10);
+            drawAlpha(&img, map.find("start")->second.x - 3, map.find("start")->second.y - 3);
             drawAlpha(&img, map.find("start")->second.x - 3, map.find("end")->second.y - 3);
         }
     }
