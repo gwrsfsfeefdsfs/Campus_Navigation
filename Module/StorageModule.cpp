@@ -240,7 +240,7 @@ void StorageModule::generateTestData() {
     insertNode("求学路新增结点2",194,267,1);
     insertNode("研学路新增结点1",84,479,1);
     insertNode("善学路新增结点1",102,451,1);
-    //insertNode("厚学路新增结点1",272,400,1);
+    insertNode("厚学路新增结点1",272,400,1);
 
 
     insertRoad("力港大道新增结点1","求学路与力港大道交点");
@@ -259,6 +259,9 @@ void StorageModule::generateTestData() {
 
     insertRoad("善学路新增结点1","研学路与善学路交点");
     insertRoad("善学路新增结点1","彩虹大道与善学路交点");
+
+    insertRoad("厚学路新增结点1","厚学路拐点左3");
+    insertRoad("厚学路新增结点1","彩虹大道与厚学路交点");
 
     //-----
 
@@ -347,7 +350,7 @@ void StorageModule::generateTestData() {
     insertRoad("四十四教","潜学路与厚学路和明学路交点");
     insertRoad("潜学路与厚学路和明学路交点","厚学路拐点左2");
     insertRoad("厚学路拐点左2","厚学路拐点左3");
-    insertRoad("厚学路拐点左3","彩虹大道与厚学路交点");
+    //insertRoad("厚学路拐点左3","彩虹大道与厚学路交点");
 
     insertRoad("致新路与笃学路交点","彩虹大道与笃行路交点（中央食堂）");
     insertRoad("致新路与力港大道交点","致新路拐点1（马克思主义学院）");
