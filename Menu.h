@@ -245,22 +245,28 @@ public:
         // 查找与start节点最近的节点
         for (auto kv : map) {
             if (kv.first != "start") {
-                short tempNum = sqrt(pow(kv.second.x - map.find("start")->second.x, 2) + pow(kv.second.y - map.find("start")->second.y, 2));
-                if (tempNum < numa) {
-                    numa = tempNum;
-                    p1 = kv.first;
+                if (kv.second.type!=3) {
+                    short tempNum = sqrt(pow(kv.second.x - map.find("start")->second.x, 2) + pow(kv.second.y - map.find("start")->second.y, 2));
+                    if (tempNum < numa) {
+                        numa = tempNum;
+                        p1 = kv.first;
+                    }
                 }
+
             }
         }
 
         // 查找与end节点最近的节点
         for (auto kv : map) {
             if (kv.first != "end") {
-                double tempNum = sqrt(pow(kv.second.x - map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
-                if (tempNum < numb) {
-                    numb = tempNum;
-                    p2 = kv.first;
+                if (kv.second.type!=3) {
+                    double tempNum = sqrt(pow(kv.second.x - map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
+                    if (tempNum < numb) {
+                        numb = tempNum;
+                        p2 = kv.first;
+                    }
                 }
+
             }
         }
 
