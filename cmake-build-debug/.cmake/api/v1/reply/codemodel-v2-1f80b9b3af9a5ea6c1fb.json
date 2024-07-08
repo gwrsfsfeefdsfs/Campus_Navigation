@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Module",
+					"jsonFile" : "directory-Module-Debug-12878828b721bac4ab45.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Module",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "Campus_Navigation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CampusNavigation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CampusNavigation-Debug-8dfa4c92bcf6605148fa.json",
+					"name" : "CampusNavigation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NavigationModule::@a67813fb0542b0b3e209",
+					"jsonFile" : "target-NavigationModule-Debug-336729a32cbbc0d58986.json",
+					"name" : "NavigationModule",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "OperationalModule::@a67813fb0542b0b3e209",
+					"jsonFile" : "target-OperationalModule-Debug-de2af8029ed5f78db2e8.json",
+					"name" : "OperationalModule",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "StorageModule::@a67813fb0542b0b3e209",
+					"jsonFile" : "target-StorageModule-Debug-53b681a5cd934b7d9070.json",
+					"name" : "StorageModule",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Campus_Navigation/cmake-build-debug",
+		"source" : "E:/Campus_Navigation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
