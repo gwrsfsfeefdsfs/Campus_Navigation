@@ -82,11 +82,11 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "E:/Campus_Navigation/./EasyX/include"
+					"path" : "C:/Users/Monster/Desktop/Campus-Navigation/./EasyX/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "E:/Campus_Navigation/Module"
+					"path" : "C:/Users/Monster/Desktop/Campus-Navigation/Module"
 				}
 			],
 			"language" : "CXX",
@@ -134,7 +134,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LE:\\Campus_Navigation\\.\\EasyX\\lib64",
+				"fragment" : "-LC:\\Users\\Monster\\Desktop\\Campus-Navigation\\.\\EasyX\\lib64",
 				"role" : "libraryPath"
 			},
 			{
