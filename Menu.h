@@ -56,8 +56,8 @@ public:
          bool overNode = false;
             for (auto& kv : map) {
                 Node node = kv.second;
-                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5) {
-                    tooltip.show(m.x, m.y, "妗傜數", "../guetMap.png");
+                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5 && node.type==3) {
+                    tooltip.show(m.x, m.y, "桂林电子科技大学", "../guetMap.png");
                     overNode = true;
                     break;
                 }
@@ -271,7 +271,7 @@ public:
           if (cross >= d2) {
               return sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
           }
-          double r = cross / d2;  //鐩镐技涓夎褰㈠師鐞嗘眰鍑篶鐐圭殑鍧愭爣
+          double r = cross / d2;  //相似三角形原理求出c点的坐标
           double px = x1 + (x2 - x1) * r;
           double py = y1 + (y2 - y1) * r;
           return sqrt((x - px) * (x - px) + (py - y) * (py - y));
@@ -280,7 +280,7 @@ public:
       {
           double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
           double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-          double r = cross / d2;  //鐩镐技涓夎褰㈠師鐞嗘眰鍑篶鐐圭殑鍧愭爣
+          double r = cross / d2;  //相似三角形原理求出c点的坐标
           double px = x1 + (x2 - x1) * r;
           double py = y1 + (y2 - y1) * r;
           Node a={"aa",(short)px,(short)py,0};
