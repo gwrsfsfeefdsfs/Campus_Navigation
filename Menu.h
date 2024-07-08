@@ -41,6 +41,7 @@ public:
         IMAGE img1;
         IMAGE img2;
         IMAGE img3;
+        IMAGE img4;
         int nodeNum = 0;
         Node po[M];
 
@@ -48,8 +49,10 @@ public:
         loadimage(&img1, "../UI.png", 800, 600);
         loadimage(&img2, "../guetMap.png", 600, 600);
         loadimage(&img3, "../temp2333.png", 146, 40);
+        loadimage(&img4, "../logo.png", 90, 80);
         drawAlpha(&img1, 0, 0);
         drawAlpha(&img2, 0, 0);
+        drawAlpha(&img4, 700, 500);
         drawAlpha(&img3, 629, 132);
         drawAlpha(&img3, 629, 198);
         drawAlpha(&img3, 629, 274);
@@ -111,6 +114,7 @@ public:
                         drawAlpha(&img3, 629, 132);
                         drawAlpha(&img3, 629, 198);
                         drawAlpha(&img3, 629, 274);
+                        drawAlpha(&img4, 700, 500);
                         centerText("出发地",630,100,36,140,20);
                         centerText("目的地",630,172,30,140,20);
                         centerText("路程距离",630,239,40,140,20);
@@ -162,6 +166,7 @@ public:
                     drawAlpha(&img3, 629, 132);
                     drawAlpha(&img3, 629, 198);
                     drawAlpha(&img3, 629, 274);
+                    drawAlpha(&img4, 700, 500);
                     centerText("出发地",630,100,36,140,20);
                     centerText("目的地",630,172,30,140,20);
                     centerText("路程距离",630,239,40,140,20);
