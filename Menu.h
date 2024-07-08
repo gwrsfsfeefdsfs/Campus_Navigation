@@ -22,19 +22,20 @@ public:
     std::string currentNodeKey;
     bool isOverNode;
       Menu() {
-        initgraph(800, 800,EW_SHOWCONSOLE | EW_DBLCLKS);
+        initgraph(800, 600,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
         IMAGE img1;
         IMAGE img2;
         int nodeNum=0;
         Node po[M];
-        loadimage(&img1, "../UI.png",800,800);
+        loadimage(&img1, "../UI.png",800,600);
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
         drawAlpha(&img2, 0, 0);
         std::unordered_map <std::string, Node>map=storageT.getNodes();
         Node temp;
+
 //     for(auto kv: map){
 //         IMAGE img;
 //         loadimage(&img, "../temp233.png",10,10);
@@ -209,6 +210,7 @@ public:
          storageT.insertNode("start1",tempx,tempy,tap);
          storageT.insertRoad("start","start1");
          storageT.insertRoad("start1",p1);
+         storageT.insertRoad(tempN,"start1");
          map=storageT.getNodes();
          map1=storageT.getAdjMatrix();
 
@@ -236,6 +238,7 @@ public:
          storageT.insertNode("end1",tempx,tempy,tap);
          storageT.insertRoad("end1","end");
          storageT.insertRoad(p2,"end1");
+         storageT.insertRoad(tempN,"end1");
          map=storageT.getNodes();
          map1=storageT.getAdjMatrix();
       }
