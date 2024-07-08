@@ -205,7 +205,7 @@ void StorageModule::generateTestData() {
     //明学路区域
     insertNode("明学路与恒学路交点",345,434,1);
     insertNode("明学路与勤学路交点",327,467,1);
-    insertNode("南2门",345,526,1);
+    insertNode("南2门",345,526,3);
 //-----
 //恒学路与勤学路区域
     insertNode("恒学路拐点1（艺术与设计学院）",397,462,1);
@@ -233,7 +233,7 @@ void StorageModule::generateTestData() {
     insertNode("溶苑",129,419,3);
     insertNode("濛苑",248,484,3);
     insertNode("思进湖",313,357,3);
-    insertNode("思援湖",311,271,3);
+    insertNode("思援湖2",311,271,3);
     insertNode("思贤湖",467,360,3);
     insertNode("相思湖",484,258,3);
     insertNode("思齐湖",412,508,3);
@@ -243,6 +243,9 @@ void StorageModule::generateTestData() {
     insertNode("11，13，14教学楼",373,327,3);
     insertNode("15，16教学楼",413,360,3);
     insertNode("1，2，3教学楼",418,181,3);
+    insertNode("44，43，42教学楼",399,441,3);
+    insertNode("4，5，6教学楼",364,227,3);
+    insertNode("7，8教学楼",347,274,3);
     insertNode("图书馆",412,257,3);
     insertNode("建交与交通工程和机电工程学院",534,334,3);
     insertNode("工程实训大楼",516,376,3);
