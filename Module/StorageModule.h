@@ -13,6 +13,8 @@ struct Node {
     std::string name;   // 节点名称
     short x, y;         // 节点坐标
     int type;           // 节点类型:临时节点（0）、路口节点（1）、弯心节点（2）、建筑节点（3）
+    std::string imagepath;//建筑节点图片
+    std::string imagetext;//建筑节点文字
 };
 
 class StorageModule {
@@ -28,6 +30,8 @@ public:
 
     // 插入节点
     void insertNode(const std::string& name, double x, double y,int type);
+    //插入建筑节点图片信息
+    void insertNode2( const std::string& name,const std::string& imgepath2, const std::string& imagetext2);
     // 插入道路
     void insertRoad(const std::string& from, const std::string& to);
     // 删除节点

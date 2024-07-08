@@ -71,7 +71,7 @@ public:
             bool overNode = false;
             for (auto& kv : map) {
                 Node node = kv.second;
-                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5) {
+                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5 && node.type==3) {
                     tooltip.show(m.x, m.y, "桂电", "../guetMap.png");
                     overNode = true;
                     break;
