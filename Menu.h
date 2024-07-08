@@ -109,6 +109,13 @@ public:
                         drawAlpha(&img3, 629, 132);
                         drawAlpha(&img3, 629, 198);
                         drawAlpha(&img3, 629, 273);
+                        for(auto kv: map){
+                            if (kv.second.type==3)
+                            {
+                                IMAGE img;
+                                loadimage(&img, "../temp233.png",10,10);
+                                drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                        }
                     }
                     IMAGE img;
                     loadimage(&img, "../temp233.png", 10, 10);
@@ -116,13 +123,15 @@ public:
                     nodeNum += 1;
                     if (nodeNum == 1) {
                         storageT.insertNode("start", m.x, m.y, 0);
-                        std::string str=m.x+" "+m.y;
+                        std::string str;
+                        str=std::to_string(m.x)+","+std::to_string(m.y);
                         const char* cstr = str.c_str();
                         centerText(cstr,629,132,37,140,10);
                     }
                     if (nodeNum == 2) {
                         storageT.insertNode("end", m.x, m.y, 0);
-                        std::string str=m.x+" "+m.y;
+                        std::string str;
+                        str=std::to_string(m.x)+","+std::to_string(m.y);
                         const char* cstr = str.c_str();
                         centerText(cstr,630,198,37,140,10);
                     }
@@ -134,15 +143,6 @@ public:
 
             // 检测按钮点击
             if (m.uMsg == WM_LBUTTONDOWN) std::cout << m.x << " " << m.y << "\n";
-            if (m.x >= 632 && m.x <= 774 && m.y >= 136 && m.y <= 170) {
-                if (m.uMsg == WM_LBUTTONDOWN) std::cout << 1 << "\n";
-            }
-            if (m.x >= 632 && m.x <= 774 && m.y >= 202 && m.y <= 237) {
-                if (m.uMsg == WM_LBUTTONDOWN) std::cout << 2 << "\n";
-            }
-            if (m.x >= 632 && m.x <= 774 && m.y >= 279 && m.y <= 311) {
-                if (m.uMsg == WM_LBUTTONDOWN) std::cout << 3 << "\n";
-            }
             if (m.x >= 632 && m.x <= 774 && m.y >= 345 && m.y <= 376) {
                 if (m.uMsg == WM_LBUTTONDOWN) std::cout << 4 << "\n";
             }
@@ -287,7 +287,7 @@ public:
         }
 
         // 绘制最短路径
-        std::cout << navigation.findShortestPath("start", "end");
+        int res= navigation.findShortestPath("start", "end");
         std::vector<std::string> a = navigation.getShortestPath();
         for (int i = 0; i < a.size(); ++i) {
             if (i + 1 <= a.size() - 1) LINE(map.find(a[i])->second, map.find(a[i + 1])->second, 10);
@@ -296,6 +296,10 @@ public:
             drawAlpha(&img, map.find("start")->second.x - 3, map.find("start")->second.y - 3);
             drawAlpha(&img, map.find("end")->second.x - 3, map.find("end")->second.y - 3);
         }
+        std::string str;
+        str=std::to_string(res*2)+"m";
+        const char* cstr = str.c_str();
+        centerText(cstr,630,272,36,140,10);
     }
 
     // 计算点到线段的距离
@@ -339,7 +343,7 @@ public:
     }
 
     // 文字居中显示函数
-    void centerText(const char *str1, int rx, int ry, int rh, int rw,int size) {
+   static  void centerText(const char *str1, int rx, int ry, int rh, int rw,int size) {
         settextstyle(size, 0, "System");
         settextcolor(WHITE);
         int hSpace = (rw - textwidth(str1)) / 2;

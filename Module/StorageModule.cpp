@@ -14,7 +14,7 @@ StorageModule::StorageModule() {
 void StorageModule::insertNode(const std::string& name, double x, double y, int type) {
     nodes[name] = {name, static_cast<short>(x), static_cast<short>(y), type};
 }
-void StorageModule::insertNode2( const std::string& name,const std::string& imgepath2, const std::string& imagetext2){
+void StorageModule::insertNode_building( const std::string& name,const std::string& imgepath2, const std::string& imagetext2){
     nodes[name].imagepath = imgepath2;
     nodes[name].imagetext = imagetext2;
 }
