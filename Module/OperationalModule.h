@@ -1,3 +1,6 @@
+//
+// Created by Apollyon on 24-7-2.
+//
 #ifndef OPERATIONAL_MODULE_H
 #define OPERATIONAL_MODULE_H
 
@@ -10,7 +13,6 @@ private:
 public:
     // 构造函数
     OperationalModule(StorageModule& storage);
-
     // 添加节点
     void addNode(const std::string& name, double x, double y, const int type);
     // 添加道路

@@ -1,3 +1,6 @@
+//
+// Created by Apollyon on 24-7-2.
+//
 #ifndef NAVIGATION_MODULE_H
 #define NAVIGATION_MODULE_H
 
@@ -8,8 +11,8 @@
 
 class NavigationModule {
 private:
-    StorageModule& storage; // 引用存储模块
-    std::vector<std::string> shortestPath; // 存储最短路径的节点信息
+    StorageModule& storage;                 // 引用存储模块
+    std::vector<std::string> shortestPath;  // 存储最短路径的节点信息
 
 public:
     // 构造函数

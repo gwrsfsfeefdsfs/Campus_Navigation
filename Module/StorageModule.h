@@ -1,3 +1,6 @@
+//
+// Created by Apollyon on 24-7-2.
+//
 #ifndef STORAGE_MODULE_H
 #define STORAGE_MODULE_H
 
@@ -9,7 +12,7 @@
 struct Node {
     std::string name;   // 节点名称
     short x, y;         // 节点坐标
-    int type;   // 节点类型
+    int type;           // 节点类型:临时节点（0）、路口节点（1）、弯心节点（2）、建筑节点（3）
 };
 
 class StorageModule {

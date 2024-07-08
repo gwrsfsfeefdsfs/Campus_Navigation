@@ -11,83 +11,91 @@
 #include <cmath>
 #include <map>
 #include "Image/image.h"
+
+// 实例化存储和导航模块
 StorageModule storageT;
 NavigationModule navigation(storageT);
 
 class Menu {
 public:
     MOUSEMSG m{};
- std::unordered_map<std::string, Node> nodes;
+    std::unordered_map<std::string, Node> nodes;
     Tooltip tooltip;
     std::string currentNodeKey;
     bool isOverNode;
-      Menu() {
+      // 构造函数
+    Menu() {
+        // 初始化图形界面
         initgraph(800, 600,EW_SHOWCONSOLE | EW_DBLCLKS);
         setbkcolor(WHITE);
         cleardevice();
+
         IMAGE img1;
         IMAGE img2;
         int nodeNum=0;
         Node po[M];
+
+        // 加载图像
         loadimage(&img1, "../UI.png",800,600);
         loadimage(&img2, "../guetMap.png",600,600);
         drawAlpha(&img1,0,0);
         drawAlpha(&img2, 0, 0);
+
+        // 获取节点和邻接矩阵
         std::unordered_map <std::string, Node>map=storageT.getNodes();
         Node temp;
-
-//     for(auto kv: map){
-//         IMAGE img;
-//         loadimage(&img, "../temp233.png",10,10);
-//         drawAlpha(&img,kv.second.x-3,kv.second.y-3);
-//     }
-        std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
-//     for(auto kv: map1){
-//
-//
-//
-//         auto ts=map.find(kv.first);
-//         for(auto kc:  map1[kv.first]) {
-//            auto te=map.find(kc.first);
-//             LINE(ts->second,te->second,0);
+//        for(auto kv: map){
+//            IMAGE img;
+//            loadimage(&img, "../temp233.png",10,10);
+//            drawAlpha(&img,kv.second.x-3,kv.second.y-3);
 //        }
-//     }
+
+        std::unordered_map<std::string, std::unordered_map<std::string, double>>map1=storageT.getAdjMatrix();
+//        for(auto kv: map1){
+//            auto ts=map.find(kv.first);
+//            for(auto kc:  map1[kv.first]) {
+//                auto te=map.find(kc.first);
+//                LINE(ts->second,te->second,0);
+//            }
+//        }
+
+
     while (1) {
         m = GetMouseMsg();
-         bool overNode = false;
-            for (auto& kv : map) {
-                Node node = kv.second;
-                if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5) {
-                    tooltip.show(m.x, m.y, "桂电", "../guetMap.png");
-                    overNode = true;
-                    break;
-                }
+        bool overNode = false;
+        for (auto& kv : map) {
+            Node node = kv.second;
+            if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5) {
+                tooltip.show(m.x, m.y, "桂电", "../guetMap.png");
+                overNode = true;
+                break;
             }
+        }
 
-            if (!overNode && isOverNode) {
-                tooltip.hide();
-            }
-            isOverNode = overNode;
+        if (!overNode && isOverNode) {
+            tooltip.hide();
+        }
+        isOverNode = overNode;
 
         if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
             if (m.uMsg == WM_LBUTTONDOWN) {
                 if (nodeNum==2) {
                     drawAlpha(&img2,0,0);
-                 for (int i=0;i<=2;i++) {
-                   storageT.deleteNode("start");
-                     storageT.deleteNode("end");
+                    for (int i=0;i<=2;i++) {
+                        storageT.deleteNode("start");
+                        storageT.deleteNode("end");
 
-                 }
+                    }
                     nodeNum=0;
                 }
                 IMAGE img;
                 loadimage(&img, "../temp233.png",10,10);
                 drawAlpha(&img,m.x-3,m.y-3);
                 nodeNum+=1;
-               if (nodeNum==1)storageT.insertNode("start",m.x,m.y,0);
+                if (nodeNum==1)storageT.insertNode("start",m.x,m.y,0);
                 if (nodeNum==2)storageT.insertNode("end",m.x,m.y,0);
                 if (nodeNum>=2) {
-                   drawWay();
+                    drawWay();
 
                 }
             }
@@ -128,8 +136,7 @@ public:
         Sleep(SLEEP);
     }
 }
- static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y){
-
+static void drawAlpha(IMAGE* picture, int  picture_x, int picture_y){
     DWORD *dst = GetImageBuffer();
     DWORD *draw = GetImageBuffer();
     DWORD *src = GetImageBuffer(picture);
@@ -154,8 +161,8 @@ public:
                 int dg = ((dst[dstX] & 0xff00) >> 8);
                 int db = dst[dstX] & 0xff;
                 draw[dstX] = ((sr * sa / 255 + dr * (255 - sa) / 255) << 16)
-                    | ((sg * sa / 255 + dg * (255 - sa) / 255) << 8)
-                    | (sb * sa / 255 + db * (255 - sa) / 255);
+                             | ((sg * sa / 255 + dg * (255 - sa) / 255) << 8)
+                             | (sb * sa / 255 + db * (255 - sa) / 255);
             }
         }
     }
@@ -184,53 +191,55 @@ public:
     for(auto kv: map){
          if (kv.first!="end") {
           double tempNum;
-            tempNum=sqrt(pow(kv.second.x -map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
-             if(tempNum<numb) {
-                numb=tempNum;
+          tempNum=sqrt(pow(kv.second.x -map.find("end")->second.x, 2) + pow(kv.second.y - map.find("end")->second.y, 2));
+          if(tempNum<numb) {
+              numb=tempNum;
               p2=kv.first;
-            }
-         }
-     }
-          int temptag;
-     for(auto kv: map1[p1]){
-         short tempNum;
+          }
+          }
+    }
+    int temptag;
+    for(auto kv: map1[p1]){
+        short tempNum;
 
-         tempNum=PointToSegDist(map.find("start")->second.x,map.find("start")->second.y,map.find(p1)->second.x,map.find(p1)->second.y,map.find(kv.first)->second.x,map.find(kv.first)->second.y);
-         if(tempNum<=numa) {
-             numa=tempNum;
-             tempN=kv.first;
+        tempNum=PointToSegDist(map.find("start")->second.x,map.find("start")->second.y,map.find(p1)->second.x,map.find(p1)->second.y,map.find(kv.first)->second.x,map.find(kv.first)->second.y);
+        if(tempNum<=numa) {
+            numa=tempNum;
+            tempN=kv.first;
         }
-     }
+    }
 
-          tap=PointToSegStyle(map.find("start")->second.x,map.find("start")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
-     if (tap==0) {
-         Node tempNode=PointToSegNode(map.find("start")->second.x,map.find("start")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
-         tempx=tempNode.x;
-         tempy=tempNode.y;
-         storageT.insertNode("start1",tempx,tempy,tap);
-         storageT.insertRoad("start","start1");
-         storageT.insertRoad("start1",p1);
-         storageT.insertRoad(tempN,"start1");
-         map=storageT.getNodes();
-         map1=storageT.getAdjMatrix();
+    tap=PointToSegStyle(map.find("start")->second.x,map.find("start")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
+    if (tap==0) {
+        Node tempNode=PointToSegNode(map.find("start")->second.x,map.find("start")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
+        tempx=tempNode.x;
+        tempy=tempNode.y;
+        storageT.insertNode("start1",tempx,tempy,tap);
+        storageT.insertRoad("start","start1");
+        storageT.insertRoad("start1",p1);
+        storageT.insertRoad(tempN,"start1");
+        map=storageT.getNodes();
+        map1=storageT.getAdjMatrix();
 
     }
 
-     else  {
-         storageT.insertRoad("start",p1);
-         map=storageT.getNodes();
-         map1=storageT.getAdjMatrix();
-     }
+    else {
+        storageT.insertRoad("start",p1);
+        map=storageT.getNodes();
+        map1=storageT.getAdjMatrix();
+    }
 
      for(auto kv: map1[p2]){
          short tempNum;
          tempNum=PointToSegDist(map.find("end")->second.x,map.find("end")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(kv.first)->second.x,map.find(kv.first)->second.y);
-        if(tempNum<=numb) {
+         if(tempNum<=numb) {
              numb=tempNum;
              tempN=kv.first;
          }
-      }
+     }
+
      tap=PointToSegStyle(map.find("end")->second.x,map.find("end")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
+
      if (tap==0) {
          Node tempNode=PointToSegNode(map.find("end")->second.x,map.find("end")->second.y,map.find(p2)->second.x,map.find(p2)->second.y,map.find(tempN)->second.x,map.find(tempN)->second.y);
          tempx=tempNode.x;
@@ -249,7 +258,7 @@ public:
      }
 
 
-         std::cout <<  navigation.findShortestPath("start","end");
+          std::cout <<  navigation.findShortestPath("start","end");
           std::vector<std::string> a=navigation.getShortestPath();
           for (int i = 0; i<a.size(); ++i)
           {
@@ -263,44 +272,41 @@ public:
 
 
 }
+static  double PointToSegDist(double x, double y, double x1, double y1, double x2, double y2) {
+    double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
+    if (cross <= 0) {
+        return sqrt((x - x1) * (x - x1) + (y - y1) * (y - y1));
+    }
+    double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    if (cross >= d2) {
+        return sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
+    }
+    double r = cross / d2;  //相似三角形原理求出c点的坐标double px = x1 + (x2 - x1) * r;
+    double px = x1 + (x2 - x1) * r;
+    double py = y1 + (y2 - y1) * r;
+    return sqrt((x - px) * (x - px) + (py - y) * (py - y));
+}
+static  Node PointToSegNode(double x, double y, double x1, double y1, double x2, double y2) {
+    double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
+    double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    double r = cross / d2;  //相似三角形原理求出c点的坐标
+    double px = x1 + (x2 - x1) * r;
+    double py = y1 + (y2 - y1) * r;
+    Node a={"aa",(short)px,(short)py,0};
+    return a;
+}
+static  int PointToSegStyle(double x, double y, double x1, double y1, double x2, double y2) {
+    double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
+    if (cross <= 0) {
+        return 1;
+    }
+    double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    if (cross >= d2) {
+        return 1;
+    }
+    return 0;
+}
 
-   static  double PointToSegDist(double x, double y, double x1, double y1, double x2, double y2)
-      {
-          double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
-          if (cross <= 0) {
-              return sqrt((x - x1) * (x - x1) + (y - y1) * (y - y1));
-          }
-          double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-          if (cross >= d2) {
-              return sqrt((x - x2) * (x - x2) + (y - y2) * (y - y2));
-          }
-          double r = cross / d2;  //相似三角形原理求出c点的坐标
-          double px = x1 + (x2 - x1) * r;
-          double py = y1 + (y2 - y1) * r;
-          return sqrt((x - px) * (x - px) + (py - y) * (py - y));
-      }
-    static  Node PointToSegNode(double x, double y, double x1, double y1, double x2, double y2)
-      {
-          double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
-          double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-          double r = cross / d2;  //相似三角形原理求出c点的坐标
-          double px = x1 + (x2 - x1) * r;
-          double py = y1 + (y2 - y1) * r;
-          Node a={"aa",(short)px,(short)py,0};
-          return a;
-      }
-    static  int PointToSegStyle(double x, double y, double x1, double y1, double x2, double y2)
-      {
-          double cross = (x2 - x1) * (x - x1) + (y2 - y1) * (y - y1);
-          if (cross <= 0) {
-              return 1;
-          }
-          double d2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-          if (cross >= d2) {
-              return 1;
-          }
-          return 0;
-      }
 };
 
 
