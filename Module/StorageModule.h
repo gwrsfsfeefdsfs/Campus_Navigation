@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <graphics.h>
 
 // 节点结构体，包含节点名称、坐标和类型
 struct Node {

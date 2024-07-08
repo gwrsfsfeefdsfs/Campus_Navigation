@@ -90,7 +90,7 @@ public:
             for (auto& kv : map) {
                 Node node = kv.second;
                 if (m.x >= node.x - 5 && m.x <= node.x + 5 && m.y >= node.y - 5 && m.y <= node.y + 5 && node.type==3) {
-                    tooltip.show(m.x, m.y, "¹ðµç", "../guetMap.png");
+                    tooltip.show(m.x, m.y, node.imagetext, node.imagepath);
                     overNode = true;
                     break;
                 }

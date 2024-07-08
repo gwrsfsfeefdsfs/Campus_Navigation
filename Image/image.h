@@ -21,12 +21,10 @@ public:
         if (visible) return;
         visible = true;
 
-
         this->x = x;
         this->y = y;
         this->width = 200;
         this->height = 100;
-
 
         buffer = new IMAGE;
         getimage(buffer, x, y, x + width, y + height);
