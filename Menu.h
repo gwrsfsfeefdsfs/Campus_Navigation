@@ -26,7 +26,6 @@ public:
     Tooltip tooltip;
     std::string currentNodeKey;
     bool isOverNode;
-    TextBox t1,t2;
     // 构造函数
     Menu() {
         // 初始化图形界面
@@ -44,7 +43,7 @@ public:
         IMAGE img4;
         int nodeNum = 0;
         Node po[M];
-
+        bool drawS=false,drawE=false;
         // 加载图像
         loadimage(&img1, "../UI.png", 800, 600);
         loadimage(&img2, "../guetMap.png", 600, 600);
@@ -91,10 +90,10 @@ public:
             // 判断鼠标在地图区域内
             if (m.x >= 0 && m.x <= 600 && m.y >= 0 && m.y <= 600) {
                 if (m.uMsg == WM_LBUTTONDOWN) {
-                    if (nodeNum == 2) {
+                    bool Isdraw=false;
+                    if (drawE&&drawS) {
                         storageT.reClear();
                         storageT.generateTestData();
-                        nodeNum = 0;
                         cleardevice();
                         drawAlpha(&img1, 0, 0);
                         drawAlpha(&img2, 0, 0);
@@ -113,40 +112,142 @@ public:
                                 loadimage(&img, "../temp233.png",10,10);
                                 drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
                         }
+                        drawE=false;
+                        drawS=false;
                     }
                     IMAGE img;
                     loadimage(&img, "../temp233.png", 10, 10);
                     drawAlpha(&img, m.x - 3, m.y - 3);
-                    nodeNum += 1;
-                    if (nodeNum == 1) {
+                    if (!drawS&&!Isdraw) {
                         storageT.insertNode("start", m.x, m.y, 0);
                         std::string str;
                         str=std::to_string(m.x)+","+std::to_string(m.y);
                         const char* cstr = str.c_str();
                         centerText(cstr,629,132,37,140,10);
+                        drawS=true;
+                        Isdraw=true;
                     }
-                    if (nodeNum == 2) {
+                    if (!drawE&&!Isdraw) {
                         storageT.insertNode("end", m.x, m.y, 0);
                         std::string str;
                         str=std::to_string(m.x)+","+std::to_string(m.y);
                         const char* cstr = str.c_str();
                         centerText(cstr,630,198,37,140,10);
+                        drawE=true;
+                        Isdraw=true;
                     }
-                    if (nodeNum >= 2) {
+                    if (drawE&&drawS&&Isdraw==true) {
                         drawWay();
                     }
                 }
             }
-
             // 检测按钮点击
-            if (m.uMsg == WM_LBUTTONDOWN) std::cout << m.x << " " << m.y << "\n";
+            if (m.x >= 632 && m.x <= 774 && m.y >= 136 && m.y <= 170) {
+                if (drawE&&drawS) {
+                    storageT.reClear();
+                    storageT.generateTestData();
+                    cleardevice();
+                    drawAlpha(&img1, 0, 0);
+                    drawAlpha(&img2, 0, 0);
+                    drawAlpha(&img3, 629, 132);
+                    drawAlpha(&img3, 629, 198);
+                    drawAlpha(&img3, 629, 274);
+                    drawAlpha(&img4, 700, 500);
+                    centerText("出发地",630,100,36,140,20);
+                    centerText("目的地",630,172,30,140,20);
+                    centerText("路程距离",630,239,40,140,20);
+                    centerText("重选",633,345,28,147,20);
+                    for(auto kv: map){
+                        if (kv.second.type==3)
+                        {
+                            IMAGE img;
+                            loadimage(&img, "../temp233.png",10,10);
+                            drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                    }
+                    drawE=false;
+                    drawS=false;
+                }
+                if (m.uMsg == WM_LBUTTONDOWN) {
+                    std::cout << 1 << "\n";
+                    char a[100];
+                    InputBox(a, 20, "输入出发点名称", "出发点", nullptr,200,100);
+                    std::cout <<a;
+                    map = storageT.getNodes();
+                   if (map.count(a)==1) {
+                       if (map.find(a)->second.type==3) {
+                           if (!map.count("start")==0)storageT.deleteNode("start");
+                           storageT.insertNode("start",map.find(a)->second.x, map.find(a)->second.y, 0);
+                           std::string str;
+                           std::cout << map.find(a)->second.x << " " << map.find(a)->second.y << "\n";
+                           str=std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y);
+                           const char* cstr = str.c_str();
+                           centerText(cstr,629,132,37,140,10);
+                           drawS=true;
+                           if (drawE) {
+                               drawWay();
+                           }
+                       }
+                   }
+
+                }
+            }
+            if (m.x >= 632 && m.x <= 774 && m.y >= 202 && m.y <= 237) {
+                if (m.uMsg == WM_LBUTTONDOWN) {
+                    if (drawE&&drawS) {
+                        storageT.reClear();
+                        storageT.generateTestData();
+                        cleardevice();
+                        drawAlpha(&img1, 0, 0);
+                        drawAlpha(&img2, 0, 0);
+                        drawAlpha(&img3, 629, 132);
+                        drawAlpha(&img3, 629, 198);
+                        drawAlpha(&img3, 629, 274);
+                        drawAlpha(&img4, 700, 500);
+                        centerText("出发地",630,100,36,140,20);
+                        centerText("目的地",630,172,30,140,20);
+                        centerText("路程距离",630,239,40,140,20);
+                        centerText("重选",633,345,28,147,20);
+                        for(auto kv: map){
+                            if (kv.second.type==3)
+                            {
+                                IMAGE img;
+                                loadimage(&img, "../temp233.png",10,10);
+                                drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                        }
+                        drawE=false;
+                        drawS=false;
+                    }
+                    std::cout << 1 << "\n";
+                    char a[100];
+                    InputBox(a, 20, "输入目的地名称", "目的地", nullptr,200,100);
+                    std::cout <<a;
+                    map = storageT.getNodes();
+                    if (map.count(a)==1) {
+                        if (map.find(a)->second.type==3) {
+                            if (!map.count("end")==0)storageT.deleteNode("end");
+                            storageT.insertNode("end",map.find(a)->second.x, map.find(a)->second.y, 0);
+                            std::string str;
+                            std::cout << map.find(a)->second.x << " " << map.find(a)->second.y << "\n";
+                            str=std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y);
+                            const char* cstr = str.c_str();
+                            centerText(cstr,630,198,37,140,10);
+                            drawE=true;
+                            if (drawS) {
+                                drawWay();
+                            }
+                        }
+                    }
+
+                }
+            }
             if (m.x >= 632 && m.x <= 774 && m.y >= 345 && m.y <= 376) {
                 if (m.uMsg == WM_LBUTTONDOWN) {
 
-
+                    drawE=false;
+                    drawS=false;
                     storageT.reClear();
                     storageT.generateTestData();
-                    nodeNum = 0;
+
                     cleardevice();
                     drawAlpha(&img1, 0, 0);
                     drawAlpha(&img2, 0, 0);
