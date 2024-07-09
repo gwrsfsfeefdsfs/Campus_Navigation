@@ -1,5 +1,4 @@
 C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/CampusNavigation.dir
-C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/Campus_Navigation.dir
 C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug/Module/CMakeFiles/NavigationModule.dir

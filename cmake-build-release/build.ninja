@@ -78,44 +78,6 @@ build CampusNavigation.exe: CXX_EXECUTABLE_LINKER__CampusNavigation_Release CMak
   TARGET_IMPLIB = libCampusNavigation.dll.a
   TARGET_PDB = CampusNavigation.pdb
 
-# =============================================================================
-# Object build statements for EXECUTABLE target Campus_Navigation
-
-
-#############################################
-# Order-only phony target for Campus_Navigation
-
-build cmake_object_order_depends_target_Campus_Navigation: phony || CMakeFiles/Campus_Navigation.dir
-
-build CMakeFiles/Campus_Navigation.dir/main.cpp.obj: CXX_COMPILER__Campus_Navigation_unscanned_Release C$:/Users/Monster/Desktop/Campus-Navigation/main.cpp || cmake_object_order_depends_target_Campus_Navigation
-  DEP_FILE = CMakeFiles\Campus_Navigation.dir\main.cpp.obj.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Monster/Desktop/Campus-Navigation/./EasyX/include
-  OBJECT_DIR = CMakeFiles\Campus_Navigation.dir
-  OBJECT_FILE_DIR = CMakeFiles\Campus_Navigation.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Campus_Navigation.dir\
-  TARGET_PDB = Campus_Navigation.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Campus_Navigation
-
-
-#############################################
-# Link the executable Campus_Navigation.exe
-
-build Campus_Navigation.exe: CXX_EXECUTABLE_LINKER__Campus_Navigation_Release CMakeFiles/Campus_Navigation.dir/main.cpp.obj
-  FLAGS = -O3 -DNDEBUG
-  LINK_LIBRARIES = -Wl,-Bstatic  -leasyx  -Wl,-Bdynamic  -leasyx  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/Monster/Desktop/Campus-Navigation/./EasyX/lib64
-  OBJECT_DIR = CMakeFiles\Campus_Navigation.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Campus_Navigation.dir\
-  TARGET_FILE = Campus_Navigation.exe
-  TARGET_IMPLIB = libCampus_Navigation.dll.a
-  TARGET_PDB = Campus_Navigation.pdb
-
 
 #############################################
 # Utility command for edit_cache
@@ -277,8 +239,6 @@ build Module/rebuild_cache: phony Module/CMakeFiles/rebuild_cache.util
 
 build CampusNavigation: phony CampusNavigation.exe
 
-build Campus_Navigation: phony Campus_Navigation.exe
-
 build NavigationModule: phony Module/libNavigationModule.a
 
 build OperationalModule: phony Module/libOperationalModule.a
@@ -299,7 +259,7 @@ build libStorageModule.a: phony Module/libStorageModule.a
 #############################################
 # Folder: C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-release
 
-build all: phony CampusNavigation.exe Campus_Navigation.exe Module/all
+build all: phony CampusNavigation.exe Module/all
 
 # =============================================================================
 

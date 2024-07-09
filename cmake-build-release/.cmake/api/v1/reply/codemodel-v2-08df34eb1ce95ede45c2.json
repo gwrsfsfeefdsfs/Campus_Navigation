@@ -10,7 +10,7 @@
 					[
 						1
 					],
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.28"
@@ -19,13 +19,12 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				},
 				{
 					"build" : "Module",
-					"jsonFile" : "directory-Module-Debug-12878828b721bac4ab45.json",
+					"jsonFile" : "directory-Module-Release-12878828b721bac4ab45.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.28"
@@ -35,13 +34,13 @@
 					"source" : "Module",
 					"targetIndexes" : 
 					[
+						1,
 						2,
-						3,
-						4
+						3
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -56,8 +55,7 @@
 						0,
 						1,
 						2,
-						3,
-						4
+						3
 					]
 				}
 			],
@@ -66,35 +64,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CampusNavigation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CampusNavigation-Debug-9ff6e8c258937b4d04f6.json",
+					"jsonFile" : "target-CampusNavigation-Release-21c7f021ba385f8b8dd8.json",
 					"name" : "CampusNavigation",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Campus_Navigation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Campus_Navigation-Debug-71bcd2713cb72e75c196.json",
-					"name" : "Campus_Navigation",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "NavigationModule::@a67813fb0542b0b3e209",
-					"jsonFile" : "target-NavigationModule-Debug-a043b641c0bb35af61c2.json",
+					"jsonFile" : "target-NavigationModule-Release-31c0fc2a2fbff79528d6.json",
 					"name" : "NavigationModule",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "OperationalModule::@a67813fb0542b0b3e209",
-					"jsonFile" : "target-OperationalModule-Debug-62494ece0c97781bd98e.json",
+					"jsonFile" : "target-OperationalModule-Release-2487f8b0cf12e2695722.json",
 					"name" : "OperationalModule",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "StorageModule::@a67813fb0542b0b3e209",
-					"jsonFile" : "target-StorageModule-Debug-5f0c3c494fb7fdac50b1.json",
+					"jsonFile" : "target-StorageModule-Release-361a6a2adfa69d08172a.json",
 					"name" : "StorageModule",
 					"projectIndex" : 0
 				}
@@ -104,7 +95,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-debug",
+		"build" : "C:/Users/Monster/Desktop/Campus-Navigation/cmake-build-release",
 		"source" : "C:/Users/Monster/Desktop/Campus-Navigation"
 	},
 	"version" : 

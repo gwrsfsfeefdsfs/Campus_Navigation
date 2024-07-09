@@ -75,7 +75,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi"
 				}
 			],
 			"includes" : 
@@ -107,16 +107,16 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 4,
+			"id" : "NavigationModule::@a67813fb0542b0b3e209"
+		},
+		{
 			"backtrace" : 5,
 			"id" : "OperationalModule::@a67813fb0542b0b3e209"
 		},
 		{
 			"backtrace" : 6,
 			"id" : "StorageModule::@a67813fb0542b0b3e209"
-		},
-		{
-			"backtrace" : 4,
-			"id" : "NavigationModule::@a67813fb0542b0b3e209"
 		}
 	],
 	"id" : "CampusNavigation::@6890427a1f51a3e7e1df",
@@ -125,53 +125,45 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-O3 -DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LC:\\Users\\Monster\\Desktop\\Campus-Navigation\\.\\EasyX\\lib64",
+				"fragment" : "-LIBPATH:C:\\Users\\Monster\\Desktop\\Campus-Navigation\\.\\EasyX\\lib64",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-Bstatic",
-				"role" : "libraries"
-			},
-			{
 				"backtrace" : 1,
-				"fragment" : "-leasyx",
+				"fragment" : "libeasyx.a.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "Module\\libNavigationModule.a",
+				"fragment" : "Module\\NavigationModule.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "Module\\libOperationalModule.a",
+				"fragment" : "Module\\OperationalModule.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 6,
-				"fragment" : "Module\\libStorageModule.a",
+				"fragment" : "Module\\StorageModule.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 1,
-				"fragment" : "-leasyx",
+				"fragment" : "libeasyx.a.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-Wl,-Bdynamic",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
 				"role" : "libraries"
 			}
 		],

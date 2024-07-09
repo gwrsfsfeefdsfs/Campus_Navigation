@@ -16,7 +16,7 @@ add_executable(CampusNavigation main.cpp
 add_subdirectory(Module)
 
 # 添加可执行文件
-add_executable(Campus_Navigation main.cpp)
+#add_executable(Campus_Navigation main.cpp)
 
 # 链接EasyX库
-target_link_libraries(Campus_Navigation easyx)
+#target_link_libraries(Campus_Navigation easyx)

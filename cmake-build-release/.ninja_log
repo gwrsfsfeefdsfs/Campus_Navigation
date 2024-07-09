@@ -1,9 +1,18 @@
 # ninja log v6
-6	1367	7422406686952451	Module/CMakeFiles/OperationalModule.dir/OperationalModule.cpp.obj	3e5f92124b5c7425
-1372	1432	7422406700605293	Module/libOperationalModule.a	aceeddc67f63ac0a
-3	1866	7422406686912451	Module/CMakeFiles/NavigationModule.dir/NavigationModule.cpp.obj	3a9451e239ca91f8
-1866	1928	7422406705545202	Module/libNavigationModule.a	a8c92a185c1d4307
-15	2578	7422406687042815	CMakeFiles/CampusNavigation.dir/main.cpp.obj	af3b9abce55e4f00
-12	2592	7422406687002814	Module/CMakeFiles/StorageModule.dir/StorageModule.cpp.obj	8816999faf014701
-2592	2665	7422406712811206	Module/libStorageModule.a	5036602587f21583
+12	1196	7422434771737891	Module/CMakeFiles/OperationalModule.dir/OperationalModule.cpp.obj	a41b225f92846ac8
+1199	1389	7422434783609398	Module/libOperationalModule.a	928cd3a381abfa10
+7	1686	7422434771682670	Module/CMakeFiles/NavigationModule.dir/NavigationModule.cpp.obj	74fafd17347a0b0e
 2665	2845	7422406713533029	CampusNavigation.exe	3bcedde9d68d2d7
+19	2515	7422434771797893	CMakeFiles/CampusNavigation.dir/main.cpp.obj	a575d2fedf72ed1e
+1686	1760	7422434788480237	Module/libNavigationModule.a	e4840e435c1c0c7
+15	2564	7422434771767892	Module/CMakeFiles/StorageModule.dir/StorageModule.cpp.obj	5b42ec359c1e55d6
+2564	2625	7422434797254333	Module/libStorageModule.a	5bd00d36c6aeeae2
+3	321	7422437998750075	build.ninja	f31ec8d9866abc06
+8	1962	7422438013286649	Module/CMakeFiles/OperationalModule.dir/OperationalModule.cpp.obj	a034fd9f36eac46d
+1966	2041	7422438032871147	Module/libOperationalModule.a	897b689f4a32d9dc
+4	2452	7422438013247732	Module/CMakeFiles/NavigationModule.dir/NavigationModule.cpp.obj	b3cfbc5c5a2efd55
+2452	2512	7422438037729729	Module/libNavigationModule.a	a56f99c1a4572f76
+15	3342	7422438013356648	CMakeFiles/CampusNavigation.dir/main.cpp.obj	e480c5b5d8a3bad2
+12	3415	7422438013326646	Module/CMakeFiles/StorageModule.dir/StorageModule.cpp.obj	f90c65d5f10601f
+3415	3475	7422438047353684	Module/libStorageModule.a	c9d327d5f420de55
+3475	3673	7422438047964390	CampusNavigation.exe	12c4b8f27492cc68
