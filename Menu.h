@@ -143,31 +143,32 @@ public:
             }
             // 检测按钮点击
             if (m.x >= 632 && m.x <= 774 && m.y >= 136 && m.y <= 170) {
-                if (drawE&&drawS) {
-                    storageT.reClear();
-                    storageT.generateTestData();
-                    cleardevice();
-                    drawAlpha(&img1, 0, 0);
-                    drawAlpha(&img2, 0, 0);
-                    drawAlpha(&img3, 629, 132);
-                    drawAlpha(&img3, 629, 198);
-                    drawAlpha(&img3, 629, 274);
-                    drawAlpha(&img4, 700, 500);
-                    centerText("出发地",630,100,36,140,20);
-                    centerText("目的地",630,172,30,140,20);
-                    centerText("路程距离",630,239,40,140,20);
-                    centerText("重选",633,345,28,147,20);
-                    for(auto kv: map){
-                        if (kv.second.type==3)
-                        {
-                            IMAGE img;
-                            loadimage(&img, "../temp233.png",10,10);
-                            drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
-                    }
-                    drawE=false;
-                    drawS=false;
-                }
+
                 if (m.uMsg == WM_LBUTTONDOWN) {
+                    if (drawE&&drawS) {
+                        storageT.reClear();
+                        storageT.generateTestData();
+                        cleardevice();
+                        drawAlpha(&img1, 0, 0);
+                        drawAlpha(&img2, 0, 0);
+                        drawAlpha(&img3, 629, 132);
+                        drawAlpha(&img3, 629, 198);
+                        drawAlpha(&img3, 629, 274);
+                        drawAlpha(&img4, 700, 500);
+                        centerText("出发地",630,100,36,140,20);
+                        centerText("目的地",630,172,30,140,20);
+                        centerText("路程距离",630,239,40,140,20);
+                        centerText("重选",633,345,28,147,20);
+                        for(auto kv: map){
+                            if (kv.second.type==3)
+                            {
+                                IMAGE img;
+                                loadimage(&img, "../temp233.png",10,10);
+                                drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
+                        }
+                        drawE=false;
+                        drawS=false;
+                    }
                     std::cout << 1 << "\n";
                     char a[100];
                     InputBox(a, 20, "输入出发点名称", "出发点", nullptr,200,100);
