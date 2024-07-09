@@ -1,0 +1,8 @@
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/CMakeFiles/CampusNavigation.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/Module/CMakeFiles/NavigationModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/Module/CMakeFiles/OperationalModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/Module/CMakeFiles/StorageModule.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/Module/CMakeFiles/edit_cache.dir
+C:/Users/Monster/Desktop/Campus-Navigation/out/build/x64-Debug/Module/CMakeFiles/rebuild_cache.dir

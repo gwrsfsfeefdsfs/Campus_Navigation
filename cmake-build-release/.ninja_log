@@ -1,0 +1,9 @@
+# ninja log v6
+6	1367	7422406686952451	Module/CMakeFiles/OperationalModule.dir/OperationalModule.cpp.obj	3e5f92124b5c7425
+1372	1432	7422406700605293	Module/libOperationalModule.a	aceeddc67f63ac0a
+3	1866	7422406686912451	Module/CMakeFiles/NavigationModule.dir/NavigationModule.cpp.obj	3a9451e239ca91f8
+1866	1928	7422406705545202	Module/libNavigationModule.a	a8c92a185c1d4307
+15	2578	7422406687042815	CMakeFiles/CampusNavigation.dir/main.cpp.obj	af3b9abce55e4f00
+12	2592	7422406687002814	Module/CMakeFiles/StorageModule.dir/StorageModule.cpp.obj	8816999faf014701
+2592	2665	7422406712811206	Module/libStorageModule.a	5036602587f21583
+2665	2845	7422406713533029	CampusNavigation.exe	3bcedde9d68d2d7
