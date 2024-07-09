@@ -13,7 +13,7 @@
 #include <cmath>
 #include <map>
 #include "Image/image.h"
-
+#include "TextBox.h"
 // 实例化存储和导航模块
 StorageModule storageT;
 NavigationModule navigation(storageT);
@@ -26,7 +26,7 @@ public:
     Tooltip tooltip;
     std::string currentNodeKey;
     bool isOverNode;
-
+    TextBox t1,t2;
     // 构造函数
     Menu() {
         // 初始化图形界面
@@ -67,24 +67,12 @@ public:
                     drawAlpha(&img,kv.second.x-3,kv.second.y-3);}
                 }
         std::unordered_map<std::string, std::unordered_map<std::string, double>> map1 = storageT.getAdjMatrix();
-        // for(auto kv: map1){
-        //
-        //
-        //
-        //     auto ts=map.find(kv.first);
-        //     for(auto kc:  map1[kv.first]) {
-        //         auto te=map.find(kc.first);
-        //         LINE(ts->second,te->second,0);
-        //     }
-        // }
         centerText("出发地",630,100,36,140,20);
         centerText("目的地",630,172,30,140,20);
         centerText("路程距离",630,239,40,140,20);
         centerText("重选",633,345,28,147,20);
         // 主循环
         while (1) {
-
-
             m = GetMouseMsg();
             bool overNode = false;
             for (auto& kv : map) {
@@ -95,7 +83,6 @@ public:
                     break;
                 }
             }
-
             if (!overNode && isOverNode) {
                 tooltip.hide();
             }
