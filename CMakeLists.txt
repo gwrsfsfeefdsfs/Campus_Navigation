@@ -10,7 +10,6 @@ link_libraries(libeasyx.a)
 # 添加可执行文件并链接模块
 add_executable(CampusNavigation main.cpp
         Menu.h
-        Menu.h
         TextBox.h)
 # 添加子目录，包含各个模块的 CMakeLists.txt
 add_subdirectory(Module)

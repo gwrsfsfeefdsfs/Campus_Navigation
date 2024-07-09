@@ -164,7 +164,7 @@ void StorageModule::generateTestData() {
     insertNode("燕园路拐点6",498,435,2);
     insertNode("燕园路与正德路交点",445,461,1);
     insertNode("南1门",443,542,3);
-    //insertNode_building("南1门" ,"../GUET_Photos/.jpg");
+    insertNode_building("南1门" ,"../GUET_Photos/nan1men.png");
 //-----
     //厚学路区域
     insertNode("厚学路与正德路交点",443,403,1);
@@ -196,7 +196,7 @@ void StorageModule::generateTestData() {
     insertNode("会议中心和办公楼",485,296,1);
     insertNode("力港大道与正德路交点",445,299,1);
     insertNode("力港大道拐点1",550,263,2);
-    insertNode("思援湖",318,309,1);
+    insertNode("思援湖2",318,309,1);
     insertNode("力港大道与潜学路交点",423,294,1);
 //-----
 
@@ -210,7 +210,7 @@ void StorageModule::generateTestData() {
     insertNode("明学路与恒学路交点",345,434,1);
     insertNode("明学路与勤学路交点",327,467,1);
     insertNode("南2门",345,526,3);
-    //insertNode_building("南2门" ,"../GUET_Photos/.jpg");
+    insertNode_building("南2门" ,"../GUET_Photos/nan2men.jpg");
 //-----
 //恒学路与勤学路区域
     insertNode("恒学路拐点1（艺术与设计学院）",397,462,1);
@@ -225,67 +225,67 @@ void StorageModule::generateTestData() {
 
     //新增结点及道路
     insertNode("清苑",250,46,3);
-    //insertNode_building("清苑" ,"../GUET_Photos/.jpg");
+    insertNode_building("清苑" ,"../GUET_Photos/qingyuan.jpg");
     insertNode("泾苑",275,118,3);
-    //insertNode_building("泾苑" ,"../GUET_Photos/.jpg");
+    insertNode_building("泾苑" ,"../GUET_Photos/jingyuan.jpg");
     insertNode("桃李园",138,100,3);
-    //insertNode_building("桃李园" ,"../GUET_Photos/.jpg");
+    insertNode_building("桃李园" ,"../GUET_Photos/taoliyuan.png");
     insertNode("花江运动区",378,103,3);
-    //insertNode_building("花江运动区" ,"../GUET_Photos/.jpg");
+    insertNode_building("花江运动区" ,"../GUET_Photos/huajiangtiyu.jpg");
     insertNode("思援湖运动区",250,289,3);
-    //insertNode_building("思援湖运动区" ,"../GUET_Photos/.jpg");
+    insertNode_building("思援湖运动区" ,"../GUET_Photos/siyuantiyu.jpg");
     insertNode("思齐湖运动区",366,508,3);
-    //insertNode_building("思齐湖运动区" ,"../GUET_Photos/.jpg");
+    insertNode_building("思齐湖运动区" ,"../GUET_Photos/siqihu.jpg");
     insertNode("商业街",383,139,3);
-    //insertNode_building("商业街" ,"../GUET_Photos/.jpg");
+    insertNode_building("商业街" ,"../GUET_Photos/shangyejie.jpg");
     insertNode("中央食堂",360,152,3);
-    //insertNode_building("中央食堂" ,"../GUET_Photos/.jpg");
+    insertNode_building("中央食堂" ,"../GUET_Photos/zhongyangshitang.jpg");
     insertNode("四创中心",269,210,3);
-    //insertNode_building("四创中心" ,"../GUET_Photos/.jpg");
+    insertNode_building("四创中心" ,"../GUET_Photos/sichuangzhongxing.jpg");
     insertNode("润苑",51,309,3);
-    //insertNode_building("润苑 ,"../GUET_Photos/.jpg");
+    insertNode_building("润苑 ","../GUET_Photos/runyuan.jpg");
     insertNode("汀苑",57,468,3);
-    //insertNode_building("汀苑" ,"../GUET_Photos/.jpg");
+    insertNode_building("汀苑" ,"../GUET_Photos/tinyuan.jpg");
     insertNode("溶苑",129,419,3);
-    //insertNode_building("溶苑" ,"../GUET_Photos/.jpg");
+    insertNode_building("溶苑" ,"../GUET_Photos/rongyuan.jpg");
     insertNode("濛苑",248,484,3);
-    //insertNode_building("濛苑" ,"../GUET_Photos/.jpg");
+    insertNode_building("濛苑" ,"../GUET_Photos/mengyuan.jpg");
     insertNode("思进湖",313,357,3);
-    //insertNode_building("思进湖" ,"../GUET_Photos/.jpg");
-    insertNode("思援湖2",311,271,3);
-    //insertNode_building("思援湖2" ,"../GUET_Photos/.jpg");
+    insertNode_building("思进湖" ,"../GUET_Photos/sijinhu.png");
+    insertNode("思援湖",311,271,3);
+    insertNode_building("思援湖" ,"../GUET_Photos/siyuanhu.png");
     insertNode("思贤湖",467,360,3);
-    //insertNode_building("思贤湖" ,"../GUET_Photos/.jpg");
+    insertNode_building("思贤湖" ,"../GUET_Photos/sixianhu.jpg");
     insertNode("相思湖",484,258,3);
-    //insertNode_building("相思湖" ,"../GUET_Photos/.jpg");
+    insertNode_building("相思湖" ,"../GUET_Photos/xiangsihu.jpg");
     insertNode("思齐湖",412,508,3);
-    //insertNode_building("思齐湖" ,"../GUET_Photos/.jpg");
+    insertNode_building("思齐湖" ,"../GUET_Photos/siqihu.jpg");
     insertNode("燕园",502,163,3);
-    //insertNode_building("燕园" ,"../GUET_Photos/.jpg");
+    insertNode_building("燕园" ,"../GUET_Photos/yanyuan.jpg");
     insertNode("仲园餐厅",135,309,3);
-    //insertNode_building("仲园餐厅" ,"../GUET_Photos/.jpg");
+    insertNode_building("仲园餐厅" ,"../GUET_Photos/zhongyuancanting.jpg");
     insertNode("雅园餐厅",281,432,3);
-    //insertNode_building("雅园餐厅" ,"../GUET_Photos/.jpg");
+    insertNode_building("雅园餐厅" ,"../GUET_Photos/yayuancanting.jpg");
     insertNode("11，13，14教学楼",373,327,3);
-    //insertNode_building("11，13，14教学楼" ,"../GUET_Photos/.jpg");
-    insertNode("15，16教学楼",413,360,3);
-    //insertNode_building("15，16教学楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("11，13，14教学楼" ,"../GUET_Photos/13,14,11jiao.jpg");
+    insertNode("16，17教学楼",413,360,3);
+    insertNode_building("16，17教学楼" ,"../GUET_Photos/16,17jiao.jpg");
     insertNode("1，2，3教学楼",418,181,3);
-    //insertNode_building("1，2，3教学楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("1，2，3教学楼" ,"../GUET_Photos/1,2,3jiao.jpg");
     insertNode("44，43，42教学楼",399,441,3);
-    //insertNode_building("44，43，42教学楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("44，43，42教学楼" ,"../GUET_Photos/44,43,42jiao.jpg");
     insertNode("4，5，6教学楼",364,227,3);
-    //insertNode_building("4，5，6教学楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("4，5，6教学楼" ,"../GUET_Photos/4,5,6jiao.jpg");
     insertNode("7，8教学楼",347,274,3);
-    //insertNode_building("7，8教学楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("7，8教学楼" ,"../GUET_Photos/7,8jiao.jpg");
     insertNode("图书馆",412,257,3);
-    //insertNode_building("图书馆" ,"../GUET_Photos/.jpg");
+    insertNode_building("图书馆" ,"../GUET_Photos/tushuguan.png");
     insertNode("建交与交通工程和机电工程学院",534,334,3);
-    //insertNode_building("建交与交通工程和机电工程学院" ,"../GUET_Photos/.jpg");
+    insertNode_building("建交与交通工程和机电工程学院" ,"../GUET_Photos/jidian.jpg");
     insertNode("工程实训大楼",516,376,3);
-    //insertNode_building("工程实训大楼" ,"../GUET_Photos/.jpg");
+    insertNode_building("工程实训大楼" ,"../GUET_Photos/gongchenshixun.jpg");
     insertNode("信息与通信学院",445,203,3);
-    //insertNode_building("信息与通信学院" ,"../GUET_Photos/.jpg");
+    insertNode_building("信息与通信学院" ,"../GUET_Photos/xinxitongxinxueyuan.jpg");
 
 
 //    insertNode("力港大道新增结点1",237,328,1);
