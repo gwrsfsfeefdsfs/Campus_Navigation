@@ -257,7 +257,7 @@ void StorageModule::generateTestData() {
     insertNode("思贤湖",467,360,3);
     insertNode_building("思贤湖" ,"../GUET_Photos/sixianhu.jpg");
     insertNode("相思湖",484,258,3);
-    insertNode_building("相思湖" ,"../GUET_Photos/xiangsihu.jpg");
+    insertNode_building("相思湖" ,"../GUET_Photos/xiangsihu.png");
     insertNode("思齐湖",412,508,3);
     insertNode_building("思齐湖" ,"../GUET_Photos/siqihu.jpg");
     insertNode("燕园",502,163,3);
@@ -288,154 +288,14 @@ void StorageModule::generateTestData() {
     insertNode_building("信息与通信学院" ,"../GUET_Photos/xinxitongxinxueyuan.jpg");
 
 
-//    insertNode("力港大道新增结点1",237,328,1);
-//    insertNode("紫荆路新增结点1",109,303,1);
-//    insertNode("求学路新增结点1",179,311,1);
-//    insertNode("求学路新增结点2",194,267,1);
-//    insertNode("研学路新增结点1",84,479,1);
-//    insertNode("善学路新增结点1",102,451,1);
-//    insertNode("厚学路新增结点1",272,400,1);
-//insertNode_building("乐学路青年教工楼","");
-//    //insertNode_building()
-//    insertNode_building("淑苑","");
-//    //insertNode_building
-//    insertNode_building("北门","");
-//insertNode_building("南1门","");
-//insertNode_building("南2门","");
-// //新增结点及道路
-//    insertNode_building("清苑","");
-//    //insertNode_building
-//    insertNode_building("泾苑","");
-//    //insertNode_building
-//    insertNode_building("桃李园","");
-//    //insertNode_building
-//    insertNode_building("花江运动区","");
-//    //insertNode_building
-//    insertNode_building("思援湖运动区","");
-//    //insertNode_building
-//    insertNode_building("思齐湖运动区","");
-//    //insertNode_building
-//    insertNode_building("商业街","");
-//    //insertNode_building
-//    insertNode_building("中央食堂","");
-//    //insertNode_building
-//    insertNode_building("四创中心","");
-//    //insertNode_building
-//    insertNode_building("润苑","");
-//    //insertNode_building
-//    insertNode_building("汀苑","");
-//    //insertNode_building
-//    insertNode_building("溶苑","");
-//    //insertNode_building
-//    insertNode_building("濛苑","");
-//    //insertNode_building
-//    insertNode_building("思进湖","");
-//    //insertNode_building
-//    insertNode_building("思援湖2","");
-//    insertNode_building("乐学路青年教工楼","");
-//    //insertNode_building()
-//    insertNode_building("淑苑","");
-//    //insertNode_building
-//    insertNode_building("北门","");
-//insertNode_building("南1门","");
-//insertNode_building("南2门","");
-// //新增结点及道路
-//    insertNode_building("清苑","");
-//    //insertNode_building
-//    insertNode_building("泾苑","");
-//    //insertNode_building
-//    insertNode_building("桃李园","");
-//    //insertNode_building
-//    insertNode_building("花江运动区","");
-//    //insertNode_building
-//    insertNode_building("思援湖运动区","");
-//    //insertNode_building
-//    insertNode_building("思齐湖运动区","");
-//    //insertNode_building
-//    insertNode_building("商业街","");
-//    //insertNode_building
-//    insertNode_building("中央食堂","");
-//    //insertNode_building
-//    insertNode_building("四创中心","");
-//    //insertNode_building
-//    insertNode_building("润苑","");
-//    //insertNode_building
-//    insertNode_building("汀苑","");
-//    //insertNode_building
-//    insertNode_building("溶苑","");
-//    //insertNode_building
-//    insertNode_building("濛苑","");
-//    //insertNode_building
-//    insertNode_building("思进湖","");
-//    //insertNode_building
-//    insertNode_building("思援湖2","");
-//    //insertNode_building
-//    insertNode_building("思贤湖","");
-//    //insertNode_building
-//    insertNode_building("相思湖","");
-//    //insertNode_building
-//    insertNode_building("思齐湖","");
-//    //insertNode_building
-//    insertNode_building("燕园","");
-//    //insertNode_building
-//    insertNode_building("仲园餐厅","");
-//    //insertNode_building
-//    insertNode_building("雅园餐厅","");
-//    //insertNode_building
-//    insertNode_building("11，13，14教学楼","");
-//    //insertNode_building
-//    insertNode_building("15，16教学楼","");
-//    //insertNode_building
-//    insertNode_building("1，2，3教学楼","");
-//    //insertNode_building
-//    insertNode_building("44，43，42教学楼","");
-//    //insertNode_building
-//    insertNode_building("4，5，6教学楼","");
-//    //insertNode_building
-//    insertNode_building("7，8教学楼","");
-//    //insertNode_building
-//    insertNode_building("图书馆","");
-//    //insertNode_building
-//    insertNode_building("建交与交通工程和机电工程学院","");
-//    //insertNode_building
-//    insertNode_building("工程实训大楼","");
-//    //insertNode_building
-//    insertNode_building("信息与通信学院","");
-//    //insertNode_building);
-//    //insertNode_building
-//    insertNode_building("思贤湖","");
-//    //insertNode_building
-//    insertNode_building("相思湖","");
-//    //insertNode_building
-//    insertNode_building("思齐湖","");
-//    //insertNode_building
-//    insertNode_building("燕园","");
-//    //insertNode_building
-//    insertNode_building("仲园餐厅","");
-//    //insertNode_building
-//    insertNode_building("雅园餐厅","");
-//    //insertNode_building
-//    insertNode_building("11，13，14教学楼","");
-//    //insertNode_building
-//    insertNode_building("15，16教学楼","");
-//    //insertNode_building
-//    insertNode_building("1，2，3教学楼","");
-//    //insertNode_building
-//    insertNode_building("44，43，42教学楼","");
-//    //insertNode_building
-//    insertNode_building("4，5，6教学楼","");
-//    //insertNode_building
-//    insertNode_building("7，8教学楼","");
-//    //insertNode_building
-//    insertNode_building("图书馆","");
-//    //insertNode_building
-//    insertNode_building("建交与交通工程和机电工程学院","");
-//    //insertNode_building
-//    insertNode_building("工程实训大楼","");
-//    //insertNode_building
-//    insertNode_building("信息与通信学院","");
-//    //insertNode_building
-//
+    insertNode("力港大道新增结点1",237,328,1);
+    insertNode("紫荆路新增结点1",109,303,1);
+    insertNode("求学路新增结点1",179,311,1);
+    insertNode("求学路新增结点2",194,267,1);
+    insertNode("研学路新增结点1",84,479,1);
+    insertNode("善学路新增结点1",102,451,1);
+    insertNode("厚学路新增结点1",272,400,1);
+
     insertRoad("力港大道新增结点1","求学路与力港大道交点");
     insertRoad("力港大道新增结点1","彩虹大道与力港大道交点");
 
@@ -560,8 +420,8 @@ void StorageModule::generateTestData() {
     insertRoad("厚学路与致新路交点","致新路拐点6");
     insertRoad("致新路拐点6","燕园路与致新路交点");
 
-    insertRoad("彩虹大道与力港大道交点","思援湖");
-    insertRoad("思援湖","致新路与力港大道交点");
+    insertRoad("彩虹大道与力港大道交点","思援湖2");
+    insertRoad("思援湖2","致新路与力港大道交点");
     insertRoad("致新路与力港大道交点","11教");
     insertRoad("11教","力港大道与潜学路交点");
     insertRoad("力港大道与潜学路交点","力港大道与正德路交点");
