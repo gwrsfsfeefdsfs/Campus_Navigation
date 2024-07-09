@@ -75,7 +75,6 @@ void StorageModule::reClear(){
   nodes.clear();
     adjMatrix.clear();
 
-
 };
 // 初始化数据
 void StorageModule::generateTestData() {
