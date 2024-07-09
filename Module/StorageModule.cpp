@@ -243,7 +243,7 @@ void StorageModule::generateTestData() {
     insertNode("四创中心",269,210,3);
     insertNode_building("四创中心" ,"../GUET_Photos/sichuangzhongxing.jpg");
     insertNode("润苑",51,309,3);
-    insertNode_building("润苑 ","../GUET_Photos/runyuan.jpg");
+    insertNode_building("润苑","../GUET_Photos/runyuan.jpg");
     insertNode("汀苑",57,468,3);
     insertNode_building("汀苑" ,"../GUET_Photos/tinyuan.jpg");
     insertNode("溶苑",129,419,3);
