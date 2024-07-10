@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Module/libOperationalModule.a"
+			"path" : "Module/libNavigationModule.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 2,
 				"parent" : 0
 			},
 			{
@@ -37,13 +37,13 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 2
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 8,
+				"line" : 3,
 				"parent" : 0
 			}
 		]
@@ -83,9 +83,9 @@
 			]
 		}
 	],
-	"id" : "OperationalModule::@a67813fb0542b0b3e209",
-	"name" : "OperationalModule",
-	"nameOnDisk" : "libOperationalModule.a",
+	"id" : "NavigationModule::@a67813fb0542b0b3e209",
+	"name" : "NavigationModule",
+	"nameOnDisk" : "libNavigationModule.a",
 	"paths" : 
 	{
 		"build" : "Module",
@@ -106,7 +106,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Module/OperationalModule.cpp",
+			"path" : "Module/NavigationModule.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
