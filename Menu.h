@@ -13,7 +13,6 @@
 #include <cmath>
 #include <map>
 #include "Image/image.h"
-#include "TextBox.h"
 // 实例化存储和导航模块
 StorageModule storageT;
 NavigationModule navigation(storageT);
@@ -29,7 +28,10 @@ public:
     // 构造函数
     Menu() {
         // 初始化图形界面
+
         initgraph(800, 600, EW_SHOWCONSOLE | EW_DBLCLKS);
+        HWND hnd = GetHWnd();
+        SetWindowText(hnd, "桂电导航");
         setbkcolor(WHITE);
         cleardevice();
         int tempsx=-1;
@@ -180,7 +182,8 @@ public:
                            storageT.insertNode("start",map.find(a)->second.x, map.find(a)->second.y, 0);
                            std::string str;
                            std::cout << map.find(a)->second.x << " " << map.find(a)->second.y << "\n";
-                           str=std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y);
+                           str=a;
+                           str+="("+std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y)+")";
                            const char* cstr = str.c_str();
                            centerText(cstr,629,132,37,140,10);
                            drawS=true;
@@ -229,7 +232,8 @@ public:
                             storageT.insertNode("end",map.find(a)->second.x, map.find(a)->second.y, 0);
                             std::string str;
                             std::cout << map.find(a)->second.x << " " << map.find(a)->second.y << "\n";
-                            str=std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y);
+                            str=a;
+                            str+="("+std::to_string(map.find(a)->second.x)+","+std::to_string(map.find(a)->second.y)+")";
                             const char* cstr = str.c_str();
                             centerText(cstr,630,198,37,140,10);
                             drawE=true;
